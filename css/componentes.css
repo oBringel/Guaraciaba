@@ -1,0 +1,773 @@
+/* ==========================================================================
+   componentes.css — blocos reutilizáveis
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Trilha de navegação (breadcrumb) — aparece sobre o topo escuro
+   -------------------------------------------------------------------------- */
+
+.trilha {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: var(--esp-5);
+}
+
+.trilha__lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--esp-2);
+  margin: 0;
+  padding: 0;
+}
+
+.trilha__lista li + li {
+  margin-top: 0;
+}
+
+.trilha__lista li + li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: var(--esp-2);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+.trilha a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+}
+
+.trilha a:hover {
+  color: var(--primaria-clara);
+}
+
+.trilha [aria-current="page"] {
+  color: var(--primaria-clara);
+}
+
+/* --------------------------------------------------------------------------
+   Botões — formato pílula
+   -------------------------------------------------------------------------- */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  padding: 0.85rem 1.6rem;
+  border: 1px solid transparent;
+  border-radius: var(--raio-pilula);
+  font-family: var(--fonte);
+  font-size: 0.93rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transicao), border-color var(--transicao),
+    color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+}
+
+.botao:active {
+  transform: translateY(1px);
+}
+
+.botao--principal,
+.botao--contraste {
+  background-color: var(--primaria);
+  border-color: var(--primaria);
+  color: var(--branco);
+  box-shadow: 0 8px 20px -10px rgba(13, 127, 120, 0.8);
+}
+
+.botao--principal:hover,
+.botao--contraste:hover {
+  background-color: var(--primaria-escura);
+  border-color: var(--primaria-escura);
+  color: var(--branco);
+  transform: translateY(-1px);
+}
+
+/* Sobre fundo escuro, o botão principal fica um tom mais claro */
+.abertura .botao--contraste,
+.faixa--navy .botao--contraste,
+.cta .botao--contraste {
+  background-color: #139a90;
+  border-color: #139a90;
+  box-shadow: 0 10px 24px -10px rgba(95, 212, 199, 0.55);
+}
+
+.abertura .botao--contraste:hover,
+.faixa--navy .botao--contraste:hover,
+.cta .botao--contraste:hover {
+  background-color: #17b0a4;
+  border-color: #17b0a4;
+}
+
+.botao--secundario {
+  background-color: var(--branco);
+  border-color: var(--borda);
+  color: var(--titulo);
+}
+
+.botao--secundario:hover {
+  border-color: var(--primaria);
+  color: var(--primaria);
+  background-color: var(--primaria-suave);
+}
+
+/* Botão translúcido para fundo escuro */
+.botao--claro {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--branco);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.botao--claro:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--branco);
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-3);
+}
+
+/* --------------------------------------------------------------------------
+   Grade de cartões
+   -------------------------------------------------------------------------- */
+
+.grade {
+  display: grid;
+  gap: var(--esp-4);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.grade--larga {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+/* Cinco atribuições: 2 cartões largos na primeira linha, 3 na segunda */
+
+.grade--atribuicoes {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48em) {
+  .grade {
+    gap: var(--esp-5);
+  }
+
+  .grade--atribuicoes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .grade--atribuicoes {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .grade--atribuicoes > :nth-child(-n + 2) {
+    grid-column: span 3;
+  }
+
+  .grade--atribuicoes > :nth-child(n + 3) {
+    grid-column: span 2;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Cartão
+   -------------------------------------------------------------------------- */
+
+.cartao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: var(--esp-5) var(--esp-5) var(--esp-5);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transition: border-color var(--transicao), box-shadow var(--transicao),
+    transform var(--transicao);
+}
+
+@media (min-width: 48em) {
+  .cartao {
+    padding: 1.75rem;
+  }
+}
+
+.cartao__numero {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--raio-pilula);
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--borda);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  color: var(--primaria);
+  margin-bottom: var(--esp-5);
+  transition: background-color var(--transicao), color var(--transicao),
+    border-color var(--transicao);
+}
+
+.cartao__titulo {
+  font-size: 1.1rem;
+  margin-bottom: var(--esp-3);
+}
+
+.cartao__titulo a {
+  text-decoration: none;
+  color: var(--titulo);
+}
+
+.cartao p {
+  color: var(--suave);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+.cartao ul {
+  color: var(--suave);
+  font-size: 0.9rem;
+  margin-top: var(--esp-2);
+}
+
+.cartao ul li::marker {
+  color: var(--primaria);
+}
+
+.cartao > :last-child {
+  margin-bottom: 0;
+}
+
+.cartao__rodape {
+  margin-top: auto;
+  padding-top: var(--esp-5);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.cartao__rodape a {
+  text-decoration: none;
+  color: var(--primaria);
+}
+
+/* Cartão clicável: tons suaves, seta no canto e área inteira clicável */
+
+.cartao--link .cartao__titulo {
+  padding-right: 2.75rem;
+}
+
+.cartao--link:nth-child(5n + 1) {
+  background-image: linear-gradient(140deg, var(--tom-lilas) 0%, var(--branco) 62%);
+}
+
+.cartao--link:nth-child(5n + 2) {
+  background-image: linear-gradient(140deg, var(--tom-pessego) 0%, var(--branco) 62%);
+}
+
+.cartao--link:nth-child(5n + 3) {
+  background-image: linear-gradient(140deg, var(--tom-menta) 0%, var(--branco) 62%);
+}
+
+.cartao--link:nth-child(5n + 4) {
+  background-image: linear-gradient(140deg, var(--tom-azul) 0%, var(--branco) 62%);
+}
+
+.cartao--link:nth-child(5n + 5) {
+  background-image: linear-gradient(140deg, var(--tom-areia) 0%, var(--branco) 62%);
+}
+
+/* Seta em círculo no canto superior direito */
+.cartao--link::after {
+  content: "";
+  position: absolute;
+  top: 1.35rem;
+  right: 1.35rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231c2a2d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 6 6 6-6 6'/%3E%3C/svg%3E")
+      center / 16px no-repeat,
+    rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--borda);
+  transition: transform var(--transicao), background-color var(--transicao);
+}
+
+/* O link do título cobre o cartão inteiro */
+.cartao--link .cartao__titulo a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.cartao--link .cartao__titulo a:focus-visible {
+  outline: none;
+}
+
+.cartao--link:has(.cartao__titulo a:focus-visible) {
+  outline: 2px solid var(--primaria);
+  outline-offset: 3px;
+}
+
+.cartao--link:hover {
+  border-color: rgba(13, 127, 120, 0.35);
+  box-shadow: var(--sombra-media);
+  transform: translateY(-3px);
+}
+
+.cartao--link:hover::after {
+  transform: translateX(3px);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 6 6 6-6 6'/%3E%3C/svg%3E")
+      center / 16px no-repeat,
+    var(--primaria);
+  border-color: var(--primaria);
+}
+
+.cartao--link:hover .cartao__numero {
+  background-color: var(--primaria);
+  border-color: var(--primaria);
+  color: var(--branco);
+}
+
+.cartao--link:hover .cartao__titulo a {
+  color: var(--primaria-escura);
+}
+
+/* --------------------------------------------------------------------------
+   Lista de serviços
+   -------------------------------------------------------------------------- */
+
+.lista-servicos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--esp-2);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.lista-servicos li {
+  margin-top: 0;
+  padding: 0.7rem var(--esp-4) 0.7rem 2.6rem;
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-pequeno);
+  font-size: 0.93rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+.lista-servicos li::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  top: 0.85rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d7f78' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E")
+      center / 11px no-repeat,
+    var(--primaria-suave);
+}
+
+/* --------------------------------------------------------------------------
+   Acordeão (details/summary — sem JavaScript)
+   -------------------------------------------------------------------------- */
+
+.acordeao {
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--branco);
+  margin-bottom: var(--esp-3);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.acordeao:hover {
+  border-color: rgba(13, 127, 120, 0.35);
+}
+
+.acordeao[open] {
+  border-color: rgba(13, 127, 120, 0.35);
+  box-shadow: var(--sombra-media);
+}
+
+.acordeao > summary {
+  padding: 1.05rem var(--esp-5);
+  padding-right: 4rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--titulo);
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  border-radius: var(--raio-pequeno);
+}
+
+.acordeao > summary::-webkit-details-marker {
+  display: none;
+}
+
+.acordeao > summary::after {
+  content: "";
+  position: absolute;
+  right: var(--esp-4);
+  top: 50%;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-top: -0.95rem;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d7f78' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+      center / 15px no-repeat,
+    var(--primaria-suave);
+  transition: transform var(--transicao);
+}
+
+.acordeao[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.acordeao[open] > summary {
+  color: var(--primaria-escura);
+}
+
+.acordeao__corpo {
+  padding: 0 var(--esp-5) var(--esp-5);
+  color: var(--texto);
+}
+
+.acordeao__corpo > :last-child {
+  margin-bottom: 0;
+}
+
+.acordeao__corpo ul {
+  margin-bottom: var(--esp-4);
+  color: var(--suave);
+}
+
+.acordeao__corpo li::marker {
+  color: var(--primaria);
+}
+
+/* --------------------------------------------------------------------------
+   Aviso / nota
+   -------------------------------------------------------------------------- */
+
+.aviso {
+  position: relative;
+  background-color: #fff8eb;
+  border: 1px solid #f1dfb8;
+  border-radius: var(--raio);
+  padding: var(--esp-5) var(--esp-5) var(--esp-5) 4.25rem;
+}
+
+.aviso::before {
+  content: "";
+  position: absolute;
+  left: var(--esp-5);
+  top: var(--esp-5);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23946400' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M12 7.5v6'/%3E%3Cpath d='M12 16.8v.2'/%3E%3C/svg%3E")
+      center / 18px no-repeat,
+    #fbe9c2;
+}
+
+.aviso > :last-child {
+  margin-bottom: 0;
+}
+
+.aviso__titulo {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #7a5300;
+  margin-bottom: var(--esp-1);
+}
+
+.nota {
+  font-size: 0.85rem;
+  color: var(--suave);
+  background-color: var(--branco);
+  border: 1px dashed var(--borda);
+  border-radius: var(--raio-pequeno);
+  padding: var(--esp-3) var(--esp-4);
+  margin-top: var(--esp-5);
+}
+
+/* --------------------------------------------------------------------------
+   Painel
+   -------------------------------------------------------------------------- */
+
+.painel {
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: var(--esp-5);
+  box-shadow: var(--sombra);
+}
+
+@media (min-width: 48em) {
+  .painel {
+    padding: var(--esp-6);
+  }
+}
+
+.painel > :last-child {
+  margin-bottom: 0;
+}
+
+.painel img {
+  border-radius: var(--raio-pequeno);
+}
+
+.painel--destaque {
+  background-image: linear-gradient(140deg, var(--tom-menta) 0%, var(--branco) 65%);
+  border-color: rgba(13, 127, 120, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Chamada para ação (bloco escuro)
+   -------------------------------------------------------------------------- */
+
+.cta {
+  background: var(--gradiente-escuro);
+  background-color: var(--escuro);
+  border-radius: var(--raio-grande);
+  padding: var(--esp-6);
+  color: var(--sobre-escuro);
+  box-shadow: var(--sombra-alta);
+}
+
+@media (min-width: 48em) {
+  .cta {
+    padding: var(--esp-7);
+  }
+}
+
+.cta h2,
+.cta h3 {
+  color: var(--branco);
+  margin-bottom: var(--esp-3);
+}
+
+.cta p {
+  max-width: 36rem;
+}
+
+.cta a:not(.botao) {
+  color: var(--primaria-clara);
+}
+
+.cta > :last-child {
+  margin-bottom: 0;
+}
+
+.cta__acoes {
+  margin-top: var(--esp-5);
+}
+
+/* --------------------------------------------------------------------------
+   Lista de links externos
+   -------------------------------------------------------------------------- */
+
+.lista-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--esp-2);
+}
+
+.lista-links li {
+  margin-top: 0;
+}
+
+.lista-links a {
+  position: relative;
+  display: block;
+  padding: var(--esp-4) 3.5rem var(--esp-4) var(--esp-5);
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-pequeno);
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--titulo);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.lista-links a::after {
+  content: "";
+  position: absolute;
+  right: var(--esp-4);
+  top: 50%;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-top: -0.95rem;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d7f78' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 16 16 8'/%3E%3Cpath d='M9 8h7v7'/%3E%3C/svg%3E")
+      center / 14px no-repeat,
+    var(--primaria-suave);
+}
+
+.lista-links a:hover {
+  border-color: rgba(13, 127, 120, 0.4);
+  box-shadow: var(--sombra-media);
+  color: var(--primaria-escura);
+}
+
+.painel .lista-links a {
+  background-color: var(--fundo);
+  border-color: transparent;
+}
+
+.painel .lista-links a:hover {
+  background-color: var(--branco);
+  border-color: rgba(13, 127, 120, 0.4);
+}
+
+.lista-links span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.88rem;
+  color: var(--suave);
+  margin-top: var(--esp-1);
+}
+
+/* --------------------------------------------------------------------------
+   Lista de definição
+   -------------------------------------------------------------------------- */
+
+.dados {
+  margin: 0;
+}
+
+.dados dt {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--suave);
+  margin-bottom: 2px;
+}
+
+.dados dd {
+  margin: 0 0 var(--esp-4);
+  padding-bottom: var(--esp-4);
+  border-bottom: 1px solid var(--borda);
+  color: var(--titulo);
+  font-weight: 500;
+}
+
+.dados dd:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Tabela
+   -------------------------------------------------------------------------- */
+
+.tabela-rolagem {
+  overflow-x: auto;
+  margin-bottom: var(--esp-5);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--branco);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--branco);
+  font-size: 0.93rem;
+}
+
+.tabela th,
+.tabela td {
+  padding: var(--esp-3) var(--esp-4);
+  border-bottom: 1px solid var(--borda);
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela tr:last-child > * {
+  border-bottom: 0;
+}
+
+.tabela thead th {
+  background-color: var(--primaria-suave);
+  color: var(--primaria-escura);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Ícones lineares
+   -------------------------------------------------------------------------- */
+
+.icone {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  stroke: var(--primaria);
+  stroke-width: 1.7;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --------------------------------------------------------------------------
+   Utilitários
+   -------------------------------------------------------------------------- */
+
+.apenas-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sem-margem {
+  margin-bottom: 0;
+}
+
+.espaco-acima {
+  margin-top: var(--esp-6);
+}
+
+/* Grade com exatamente cinco cartões: uma linha só no desktop */
+@media (min-width: 64em) {
+  .grade:not(.grade--atribuicoes):has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

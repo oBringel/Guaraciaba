@@ -1,0 +1,274 @@
+/* ==========================================================================
+   paginas.css — estilos específicos de páginas
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Início — abertura (centralizada, fundo escuro com faixas diagonais)
+   -------------------------------------------------------------------------- */
+
+.abertura {
+  position: relative;
+  background: var(--gradiente-escuro);
+  background-color: var(--escuro);
+  color: var(--sobre-escuro);
+  padding-block: var(--esp-7) 5.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Brilho suave sobre as faixas */
+.abertura::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto auto;
+  width: 70%;
+  height: 140%;
+  background: linear-gradient(125deg, transparent 35%, rgba(255, 255, 255, 0.05) 50%, transparent 62%);
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.abertura__grade {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--esp-5);
+}
+
+.abertura__grade > div:first-child {
+  max-width: 48rem;
+}
+
+.abertura__olho {
+  display: inline-block;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--raio-pilula);
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--primaria-clara);
+  margin-bottom: var(--esp-5);
+}
+
+.abertura h1 {
+  color: var(--branco);
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: var(--esp-5);
+}
+
+.abertura__linha {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--branco);
+  max-width: 34rem;
+  margin: 0 auto var(--esp-3);
+}
+
+.abertura__texto {
+  font-size: 0.98rem;
+  color: var(--sobre-escuro);
+  max-width: 30rem;
+  margin: 0 auto var(--esp-6);
+}
+
+.abertura .botoes {
+  justify-content: center;
+}
+
+/* Emblema acima do título — o SVG decorativo vira um ícone pequeno.
+   Substituir por <img> quando houver logo/foto. */
+
+.abertura__figura {
+  order: -1;
+  width: 5.5rem;
+  color: var(--branco);
+  opacity: 0.9;
+}
+
+.abertura__figura svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.abertura__figura svg g {
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --------------------------------------------------------------------------
+   Início — faixa de informações (cartão flutuante sobre a abertura)
+   -------------------------------------------------------------------------- */
+
+.abertura + .faixa--compacta {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  margin-top: -3rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.informacoes {
+  display: grid;
+  gap: var(--esp-4);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-grande);
+  padding: var(--esp-5);
+  box-shadow: var(--sombra-alta);
+}
+
+.informacao {
+  display: flex;
+  gap: var(--esp-4);
+  align-items: center;
+}
+
+.informacao .icone {
+  box-sizing: content-box;
+  width: 1.3rem;
+  height: 1.3rem;
+  padding: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--primaria-suave);
+}
+
+.informacao__rotulo {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--suave);
+  margin-bottom: 2px;
+}
+
+.informacao__valor {
+  display: block;
+  font-size: 0.97rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--titulo);
+}
+
+.informacao__valor a {
+  color: var(--titulo);
+  text-decoration: none;
+}
+
+.informacao__valor a:hover {
+  color: var(--primaria);
+}
+
+.informacao p {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Contato e localização
+   -------------------------------------------------------------------------- */
+
+.contato-grade {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.mapa {
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  background-color: var(--branco);
+  box-shadow: var(--sombra-media);
+}
+
+.mapa iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 22rem;
+  border: 0;
+}
+
+.horarios {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.horarios th,
+.horarios td {
+  padding: var(--esp-3) 0;
+  border-bottom: 1px solid var(--borda);
+  text-align: left;
+}
+
+.horarios tr:last-child > * {
+  border-bottom: 0;
+}
+
+.horarios th {
+  font-weight: 600;
+  color: var(--titulo);
+}
+
+.horarios td {
+  text-align: right;
+  color: var(--suave);
+}
+
+/* --------------------------------------------------------------------------
+   Tablet
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 48em) {
+  .abertura {
+    padding-block: var(--esp-8) 7rem;
+  }
+
+  .abertura h1 {
+    font-size: 4rem;
+  }
+
+  .abertura__linha {
+    font-size: 1.3rem;
+  }
+
+  .informacoes {
+    padding: var(--esp-5) var(--esp-6);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 64em) {
+  .abertura {
+    padding-block: 6rem 8rem;
+  }
+
+  .abertura h1 {
+    font-size: 4.6rem;
+  }
+
+  .informacoes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .informacao + .informacao {
+    border-left: 1px solid var(--borda);
+    padding-left: var(--esp-5);
+  }
+
+  .contato-grade {
+    grid-template-columns: 1fr 1.15fr;
+    align-items: start;
+    gap: var(--esp-7);
+  }
+}

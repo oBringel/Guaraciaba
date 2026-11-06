@@ -1,0 +1,555 @@
+/* ==========================================================================
+   layout.css — container, cabeçalho, navegação, faixas e rodapé
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container
+   -------------------------------------------------------------------------- */
+
+.container {
+  width: min(100% - 2rem, var(--largura-max));
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Link de salto (acessibilidade)
+   -------------------------------------------------------------------------- */
+
+.pular-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--primaria);
+  color: var(--branco);
+  padding: var(--esp-3) var(--esp-5);
+  border-radius: var(--raio-pilula);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pular-conteudo:focus {
+  left: var(--esp-4);
+  top: var(--esp-2);
+  color: var(--branco);
+}
+
+/* --------------------------------------------------------------------------
+   Cabeçalho — barra branca fixa no topo
+   -------------------------------------------------------------------------- */
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--borda);
+  color: var(--texto);
+}
+
+.cabecalho__interno {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--esp-3) var(--esp-4);
+  padding-block: var(--esp-3);
+}
+
+/* Marca: ícone decorativo + nome. Trocar por <img> quando houver logo. */
+
+.marca {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: var(--esp-3);
+  align-items: center;
+  color: var(--titulo);
+  text-decoration: none;
+  min-width: 0;
+}
+
+.marca::before {
+  content: "";
+  grid-row: 1 / span 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 12px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9.5 12 4l9 5.5'/%3E%3Cpath d='M4.5 9.5h15'/%3E%3Cpath d='M6.5 10v7M10 10v7M14 10v7M17.5 10v7'/%3E%3Cpath d='M4 19.5h16'/%3E%3C/svg%3E")
+      center / 60% no-repeat,
+    linear-gradient(140deg, #14a397, var(--primaria) 55%, #075651);
+  box-shadow: 0 6px 14px -6px rgba(13, 127, 120, 0.6);
+}
+
+.marca:hover {
+  color: var(--titulo);
+}
+
+.marca__nome {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  transition: color var(--transicao);
+}
+
+.marca:hover .marca__nome {
+  color: var(--primaria);
+}
+
+.marca__desc {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--suave);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Contato no topo: horário + telefone em pílula */
+
+.cabecalho__contato {
+  display: none;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--suave);
+}
+
+.cabecalho__contato br {
+  display: none;
+}
+
+.cabecalho__contato a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: 0.6rem 1.15rem;
+  border-radius: var(--raio-pilula);
+  background-color: var(--primaria);
+  color: var(--branco);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.cabecalho__contato a::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 5.5A1.5 1.5 0 0 1 6 4h2l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v2a1.5 1.5 0 0 1-1.5 1.5A16 16 0 0 1 4.5 5.5z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.cabecalho__contato a:hover {
+  background-color: var(--primaria-escura);
+  color: var(--branco);
+}
+
+/* --------------------------------------------------------------------------
+   Navegação principal
+   -------------------------------------------------------------------------- */
+
+/* Alternador do menu no celular — só CSS, sem JavaScript.
+   Quando houver JavaScript, trocar por um <button> com aria-expanded. */
+
+.menu-alternador {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  margin: -1px;
+}
+
+.menu-rotulo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  justify-self: end;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-pilula);
+  background-color: var(--branco);
+  color: var(--titulo);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transicao), background-color var(--transicao);
+}
+
+.menu-rotulo:hover {
+  border-color: var(--primaria);
+  background-color: var(--primaria-suave);
+}
+
+.menu-alternador:focus-visible + .menu-rotulo {
+  outline: 2px solid var(--primaria);
+  outline-offset: 3px;
+}
+
+.menu-alternador:checked + .menu-rotulo {
+  background-color: var(--primaria);
+  border-color: var(--primaria);
+  color: var(--branco);
+}
+
+.menu-rotulo__icone,
+.menu-rotulo__icone::before,
+.menu-rotulo__icone::after {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: currentColor;
+}
+
+.menu-rotulo__icone {
+  position: relative;
+}
+
+.menu-rotulo__icone::before,
+.menu-rotulo__icone::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-rotulo__icone::before {
+  top: -5px;
+}
+
+.menu-rotulo__icone::after {
+  top: 5px;
+}
+
+.navegacao {
+  display: none;
+  grid-column: 1 / -1;
+  padding-bottom: var(--esp-3);
+}
+
+.menu-alternador:checked ~ .navegacao {
+  display: block;
+}
+
+.navegacao__lista {
+  list-style: none;
+  margin: 0;
+  padding: var(--esp-2);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: var(--esp-1);
+  background-color: var(--fundo);
+  border-radius: var(--raio);
+}
+
+.navegacao__lista li + li {
+  margin-top: 0;
+}
+
+.navegacao__link {
+  display: block;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--raio-pilula);
+  color: var(--texto);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transicao), background-color var(--transicao);
+}
+
+.navegacao__link:hover {
+  color: var(--primaria);
+  background-color: var(--primaria-suave);
+}
+
+.navegacao__link[aria-current="page"] {
+  color: var(--primaria);
+  background-color: var(--primaria-suave);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Faixas de seção
+   -------------------------------------------------------------------------- */
+
+.faixa {
+  padding-block: var(--esp-7);
+}
+
+.faixa--branca {
+  background-color: var(--branco);
+}
+
+.faixa--creme {
+  background-color: var(--fundo);
+}
+
+.faixa--navy {
+  position: relative;
+  background: var(--gradiente-escuro);
+  background-color: var(--escuro);
+  color: var(--sobre-escuro);
+}
+
+.faixa--navy h2 {
+  color: var(--branco);
+}
+
+.faixa--navy p {
+  max-width: 36rem;
+}
+
+.faixa--navy .secao__rotulo {
+  background-color: rgba(95, 212, 199, 0.14);
+  color: var(--primaria-clara);
+}
+
+.faixa--compacta {
+  padding-block: var(--esp-6);
+}
+
+/* --------------------------------------------------------------------------
+   Conteúdo das páginas internas
+   -------------------------------------------------------------------------- */
+
+.conteudo {
+  display: block;
+  padding-block: var(--esp-6) var(--esp-8);
+}
+
+.secao {
+  margin-bottom: var(--esp-7);
+}
+
+.secao:last-child {
+  margin-bottom: 0;
+}
+
+.secao__titulo {
+  font-size: 1.55rem;
+  margin-bottom: var(--esp-4);
+}
+
+.secao__rotulo {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--raio-pilula);
+  background-color: var(--primaria-suave);
+  color: var(--primaria);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--esp-4);
+}
+
+.secao__intro {
+  max-width: var(--largura-texto);
+  color: var(--suave);
+  font-size: 1.02rem;
+  margin-bottom: var(--esp-5);
+}
+
+.secao__cabecalho {
+  margin-bottom: var(--esp-6);
+}
+
+.prosa {
+  max-width: var(--largura-texto);
+}
+
+.prosa p {
+  color: var(--texto);
+}
+
+/* --------------------------------------------------------------------------
+   Topo de página interna — faixa escura com gradiente
+   -------------------------------------------------------------------------- */
+
+.pagina-topo {
+  background: var(--gradiente-escuro);
+  background-color: var(--escuro);
+  color: var(--sobre-escuro);
+  padding-block: var(--esp-6) var(--esp-7);
+}
+
+.pagina-topo h1 {
+  color: var(--branco);
+  margin-bottom: var(--esp-3);
+}
+
+.pagina-topo__resumo {
+  margin: 0;
+  max-width: var(--largura-texto);
+  font-size: 1.02rem;
+  color: var(--sobre-escuro);
+}
+
+/* --------------------------------------------------------------------------
+   Rodapé
+   -------------------------------------------------------------------------- */
+
+.rodape {
+  background-color: var(--escuro);
+  background-image: radial-gradient(ellipse 50% 70% at 100% 0%, rgba(26, 110, 104, 0.35), transparent 70%);
+  color: var(--sobre-escuro);
+  padding-block: var(--esp-7) var(--esp-5);
+  font-size: 0.9rem;
+}
+
+.rodape a {
+  color: var(--sobre-escuro);
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  color: var(--primaria-clara);
+}
+
+.rodape__grade {
+  display: grid;
+  gap: var(--esp-6);
+  margin-bottom: var(--esp-6);
+}
+
+.rodape__titulo {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--branco);
+  margin-bottom: var(--esp-4);
+}
+
+.rodape__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rodape__lista li + li {
+  margin-top: var(--esp-2);
+}
+
+.rodape address {
+  margin-bottom: var(--esp-3);
+  line-height: 1.85;
+}
+
+.rodape__base {
+  border-top: 1px solid var(--linha-escuro);
+  padding-top: var(--esp-5);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.rodape__base p {
+  margin: 0 0 var(--esp-2);
+}
+
+.rodape__base p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Tablet
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 48em) {
+  .container {
+    width: min(100% - 3rem, var(--largura-max));
+  }
+
+  .faixa {
+    padding-block: var(--esp-8);
+  }
+
+  .faixa--compacta {
+    padding-block: var(--esp-6);
+  }
+
+  .marca__nome {
+    font-size: 1.1rem;
+  }
+
+  .conteudo {
+    padding-block: var(--esp-7) var(--esp-8);
+  }
+
+  .secao__titulo {
+    font-size: 1.85rem;
+  }
+
+  .pagina-topo {
+    padding-block: var(--esp-7) var(--esp-8);
+  }
+
+  .rodape__grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop — marca e contato na primeira linha, menu na segunda
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 64em) {
+  .cabecalho__interno {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "marca contato"
+      "nav nav";
+    gap: var(--esp-2) var(--esp-5);
+    padding-block: var(--esp-4) 0;
+  }
+
+  .marca {
+    grid-area: marca;
+  }
+
+  .cabecalho__contato {
+    grid-area: contato;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: var(--esp-4);
+  }
+
+  .menu-rotulo {
+    display: none;
+  }
+
+  .navegacao {
+    grid-area: nav;
+    display: block;
+    padding-bottom: var(--esp-2);
+  }
+
+  .navegacao__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 0;
+    margin-inline: -0.9rem;
+    background: none;
+    border-radius: 0;
+  }
+
+  .navegacao__link {
+    font-size: 0.88rem;
+  }
+
+  .rodape__grade {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: var(--esp-7);
+  }
+}

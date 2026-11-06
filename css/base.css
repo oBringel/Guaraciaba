@@ -1,0 +1,290 @@
+/* ==========================================================================
+   base.css — variáveis, reset e estilos de elementos
+   Cartório de Guaraciaba do Norte
+   Estilo: portal de serviços — tons petróleo/verde-água, cantos arredondados,
+   tipografia sem serifa geométrica.
+   ========================================================================== */
+
+:root {
+  /* Cores — marca */
+  --primaria: #0d7f78;          /* botões, links, destaques */
+  --primaria-escura: #0a615c;   /* hover dos botões */
+  --primaria-clara: #5fd4c7;    /* destaques sobre fundo escuro */
+  --primaria-suave: #e7f4f2;    /* fundos de realce */
+
+  /* Cores — superfícies escuras (abertura, faixas, rodapé) */
+  --escuro: #081c1d;
+  --escuro-2: #0d2d2d;
+  --escuro-3: #124341;
+
+  /* Cores — neutras */
+  --fundo: #f4f7f7;
+  --branco: #ffffff;
+  --texto: #1c2a2d;
+  --titulo: #0f1c1e;
+  --suave: #5c6b6e;
+  --borda: #e2e9e9;
+
+  /* Tons dos cartões (gradientes muito leves) */
+  --tom-lilas: #f1eefc;
+  --tom-pessego: #fdf1ea;
+  --tom-menta: #e9f6f2;
+  --tom-azul: #eaf2fb;
+  --tom-areia: #f7f3e8;
+
+  /* Sobre fundo escuro */
+  --sobre-escuro: rgba(255, 255, 255, 0.74);
+  --linha-escuro: rgba(255, 255, 255, 0.12);
+
+  /* Tipografia */
+  --fonte: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
+
+  /* Espaçamento */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+  --esp-8: 5rem;
+
+  /* Medidas */
+  --largura-max: 74rem;
+  --largura-texto: 42rem;
+  --raio-grande: 24px;
+  --raio: 18px;
+  --raio-pequeno: 12px;
+  --raio-pilula: 999px;
+
+  /* Sombras */
+  --sombra: 0 1px 2px rgba(8, 28, 29, 0.05);
+  --sombra-media: 0 12px 28px -14px rgba(8, 28, 29, 0.22);
+  --sombra-alta: 0 24px 48px -20px rgba(8, 28, 29, 0.3);
+
+  /* Fundo escuro com faixas diagonais — usado na abertura, topo das páginas,
+     chamadas e rodapé */
+  --gradiente-escuro:
+    linear-gradient(118deg, transparent 0 30%, rgba(95, 212, 199, 0.16) 38%, transparent 47%),
+    linear-gradient(128deg, transparent 0 52%, rgba(40, 170, 158, 0.22) 60%, rgba(95, 212, 199, 0.08) 64%, transparent 72%),
+    linear-gradient(108deg, transparent 0 12%, rgba(30, 130, 122, 0.18) 20%, transparent 30%),
+    linear-gradient(135deg, transparent 0 74%, rgba(95, 212, 199, 0.12) 82%, transparent 90%),
+    radial-gradient(ellipse 60% 80% at 85% 0%, rgba(26, 110, 104, 0.55), transparent 70%),
+    linear-gradient(140deg, #061516 0%, #0c2c2c 45%, #081c1d 100%);
+
+  --transicao: 220ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Reset
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte);
+  color: var(--titulo);
+  margin: 0 0 var(--esp-4);
+  text-wrap: balance;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--esp-3);
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.08rem;
+}
+
+h4 {
+  font-size: 0.95rem;
+}
+
+p,
+ul,
+ol,
+dl {
+  margin: 0 0 var(--esp-4);
+}
+
+ul,
+ol {
+  padding-left: 1.15rem;
+}
+
+li + li {
+  margin-top: var(--esp-2);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--titulo);
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+a {
+  color: var(--primaria);
+  text-decoration-color: rgba(13, 127, 120, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color var(--transicao), text-decoration-color var(--transicao);
+}
+
+a:hover {
+  color: var(--primaria-escura);
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primaria);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  display: block;
+}
+
+address {
+  font-style: normal;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--borda);
+  margin: var(--esp-6) 0;
+}
+
+code {
+  font-size: 0.88em;
+  background: var(--primaria-suave);
+  color: var(--primaria-escura);
+  border-radius: 6px;
+  padding: 0.12em 0.4em;
+}
+
+::selection {
+  background: var(--primaria);
+  color: var(--branco);
+}
+
+/* --------------------------------------------------------------------------
+   Tipografia — telas maiores
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 48em) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.12rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Preferência por menos movimento
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Impressão
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .navegacao,
+  .menu-rotulo,
+  .rodape,
+  .pular-conteudo,
+  .botao,
+  .cta,
+  .abertura__figura {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  .abertura,
+  .pagina-topo,
+  .faixa--navy {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .abertura h1,
+  .pagina-topo h1,
+  .faixa--navy h2 {
+    color: #000 !important;
+  }
+}

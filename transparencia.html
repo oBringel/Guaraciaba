@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transparência – Cartório Arquimedes Bucar</title>
+  <meta name="description" content="Dados oficiais da serventia, valores cobrados e canais de fiscalização e ouvidoria." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/componentes.css" />
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho__interno">
+      <a class="marca" href="index.html">
+        <span class="marca__nome">Cartório Arquimedes Bucar</span>
+        <span class="marca__desc">2º Ofício de Guaraciaba do Norte · Serviços Notariais e Registrais</span>
+      </a>
+
+      <p class="cabecalho__contato">
+        <a href="tel:+558888127535">(88) 8812-7535</a><br />
+        Segunda a sexta, 08h às 16h
+      </p>
+
+      <!-- Menu do celular: alternado apenas com CSS, sem JavaScript -->
+      <input class="menu-alternador" type="checkbox" id="abrir-menu" />
+      <label class="menu-rotulo" for="abrir-menu">
+        <span class="menu-rotulo__icone" aria-hidden="true"></span>
+        <span class="menu-rotulo__texto">Menu</span>
+      </label>
+
+      <nav class="navegacao" aria-label="Navegação principal">
+        <ul class="navegacao__lista">
+          <li><a class="navegacao__link" href="index.html" aria-current="page">Início</a></li>
+          <li><a class="navegacao__link" href="o-cartorio.html">O Cartório</a></li>
+          <li><a class="navegacao__link" href="servicos.html">Serviços</a></li>
+          <li><a class="navegacao__link" href="certidoes.html">Certidões</a></li>
+          <li><a class="navegacao__link" href="selo-digital.html">Selo Digital</a></li>
+          <li><a class="navegacao__link" href="emolumentos.html">Emolumentos</a></li>
+          <li><a class="navegacao__link" href="transparencia.html">Transparência</a></li>
+          <li><a class="navegacao__link" href="agenda-2030.html">Agenda 2030</a></li>
+          <li><a class="navegacao__link" href="duvidas.html">Dúvidas</a></li>
+          <li><a class="navegacao__link" href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="pagina-topo">
+    <div class="container">
+      <nav class="trilha" aria-label="Você está em">
+        <ol class="trilha__lista">
+            <li><a href="index.html">Início</a></li>
+            <li><span aria-current="page">Transparência</span></li>
+        </ol>
+      </nav>
+      <h1>Transparência</h1>
+      <p class="pagina-topo__resumo">Dados oficiais da serventia, valores cobrados e canais de fiscalização.</p>
+    </div>
+  </div>
+
+  <main class="container conteudo" id="conteudo">
+    <section class="secao" aria-labelledby="titulo-identificacao">
+      <h2 class="secao__titulo" id="titulo-identificacao">Identificação da serventia</h2>
+      <div class="painel">
+        <dl class="dados">
+          <dt>Denominação oficial</dt>
+          <dd>[DENOMINAÇÃO OFICIAL DA SERVENTIA]</dd>
+          <dt>Titular</dt>
+          <dd>[NOME DO TABELIÃO/OFICIAL TITULAR]</dd>
+          <dt>Código Nacional da Serventia (CNS)</dt>
+          <dd>[CNS]</dd>
+          <dt>Comarca</dt>
+          <dd>Guaraciaba do Norte – Ceará</dd>
+          <dt>Atribuições</dt>
+          <dd>
+            Tabelionato de Notas · Tabelionato de Protesto de Títulos ·
+            Registro de Imóveis · Registro de Títulos e Documentos ·
+            Registro Civil de Pessoas Jurídicas
+          </dd>
+          <dt>Endereço</dt>
+          <dd>[Rua, número, bairro] · Guaraciaba do Norte – CE · CEP [CEP]</dd>
+          <dt>Atendimento ao público</dt>
+          <dd>Segunda a sexta, [08h às 17h]</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-valores">
+      <h2 class="secao__titulo" id="titulo-valores">Valores cobrados</h2>
+      <div class="prosa">
+        <p>
+          Os emolumentos são fixados por lei estadual e divulgados pelo Tribunal de
+          Justiça do Ceará. A serventia não define, não reajusta e não concede
+          descontos sobre esses valores. Parte do que é pago é repassada ao Estado e
+          aos fundos previstos em lei.
+        </p>
+        <p class="sem-margem">
+          <a class="botao botao--secundario" href="emolumentos.html">Ver tabela de emolumentos</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-fiscalizacao">
+      <h2 class="secao__titulo" id="titulo-fiscalizacao">Fiscalização e prestação de contas</h2>
+      <div class="prosa">
+        <p>
+          Os serviços notariais e de registro são exercidos por delegação do Poder
+          Público e fiscalizados pelo Poder Judiciário. Dados cadastrais e estatísticos
+          das serventias de todo o país ficam disponíveis no sistema Justiça Aberta,
+          do Conselho Nacional de Justiça, de consulta livre.
+        </p>
+      </div>
+      <div class="painel">
+        <ul class="lista-links">
+          <li>
+            <a href="https://www.cnj.jus.br/corregedoria/justica_aberta/" rel="external noopener" target="_blank">
+              Justiça Aberta — CNJ
+              <span>Consulta pública de dados das serventias extrajudiciais.</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tjce.jus.br/" rel="external noopener" target="_blank">
+              Corregedoria-Geral de Justiça do Ceará
+              <span>Órgão responsável pela fiscalização desta serventia.</span>
+            </a>
+          </li>
+          <li>
+            <a href="ouvidoria.html">
+              Ouvidoria da serventia
+              <span>Canal direto para elogios, sugestões, reclamações e denúncias.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-gratuidades">
+      <h2 class="secao__titulo" id="titulo-gratuidades">Gratuidades</h2>
+      <div class="aviso">
+        <p class="sem-margem">
+          A legislação assegura gratuidade em determinados atos e para pessoas
+          reconhecidamente pobres, mediante declaração. Procure o atendimento para
+          verificar se o seu caso se enquadra — a solicitação não precisa ser
+          justificada além da declaração prevista em lei.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <p class="rodape__titulo">Cartório Arquimedes Bucar</p>
+          <address>
+            [Rua, número, bairro]<br />
+            Guaraciaba do Norte – CE · CEP [CEP]<br />
+            Telefone: <a href="tel:+558888127535">(88) 8812-7535</a><br />
+            WhatsApp: <a href="https://wa.me/558888127535?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida.">(88) 8812-7535</a><br />
+            E-mail: <a href="mailto:[ @]">@</a><br />
+            Instagram: <a href="https://www.instagram.com/2cartorioguaraciaba" rel="external noopener" target="_blank">@2cartorioguaraciaba</a>
+          </address>
+          <p class="sem-margem">Segunda a sexta, 08h às 16h</p>
+        </div>
+
+        <div>
+          <p class="rodape__titulo">Atribuições</p>
+          <ul class="rodape__lista">
+            <li><a href="servicos-notas.html">Tabelionato de Notas</a></li>
+            <li><a href="servicos-protesto.html">Tabelionato de Protesto de Títulos</a></li>
+            <li><a href="servicos-registro-imoveis.html">Registro de Imóveis</a></li>
+            <li><a href="servicos-titulos-documentos.html">Registro de Títulos e Documentos</a></li>
+            <li><a href="servicos-pessoas-juridicas.html">Registro Civil de Pessoas Jurídicas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="rodape__titulo">Institucional</p>
+          <ul class="rodape__lista">
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="modelos.html">Modelos e requerimentos</a></li>
+            <li><a href="agenda-2030.html">Agenda 2030</a></li>
+            <li><a href="privacidade.html">Aviso de Privacidade e LGPD</a></li>
+            <li><a href="ouvidoria.html">Ouvidoria</a></li>
+            <li>
+              <a href="https://www.tjce.jus.br/" rel="external noopener" target="_blank">
+                Corregedoria-Geral de Justiça do Ceará
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">
+        
+        <p>
+          Os emolumentos dos serviços notariais e de registro são fixados por lei
+          estadual e divulgados pelo Tribunal de Justiça do Ceará.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
