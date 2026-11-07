@@ -252,8 +252,17 @@ code {
   }
 }
 
-body {
-  animation: pagina-entrar 260ms ease-out both;
+/* A página só é pintada depois que o cabeçalho e o rodapé foram montados.
+   Sem isto o HTML aparece "sem moldura" por um instante e a troca parece
+   um glitch. A classe .js é posta por um script no <head>; se o JS estiver
+   desligado o conteúdo aparece normalmente. */
+html.js body {
+  opacity: 0;
+}
+
+html.site-pronto body {
+  opacity: 1;
+  animation: pagina-entrar 320ms ease-out both;
 }
 
 html.pagina-saindo body {

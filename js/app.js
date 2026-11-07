@@ -44,6 +44,8 @@ async function iniciar() {
 
     document.documentElement.classList.add("site-pronto");
   } catch (erro) {
+    // Sem os dados a página não tem moldura; ainda assim precisa aparecer.
+    document.documentElement.classList.add("site-pronto");
     mostrarErro(erro);
   }
 }
