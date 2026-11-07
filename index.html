@@ -1,632 +1,189 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Cartório Arquimedes Bucar, em Guaraciaba do Norte - CE. Entre em contato pelo WhatsApp."
-    >
-
-    <meta name="theme-color" content="#101828">
-
-    <title>Página em Construção | Cartório Arquimedes Bucar</title>
-
-    <style>
-        /* =========================
-           RESET
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* =========================
-           BASE
-        ========================= */
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #101828;
-            color: #FFFFFF;
-
-            min-height: 100vh;
-            min-height: 100dvh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            padding: 24px;
-        }
-
-        /* =========================
-           CONTAINER PRINCIPAL
-        ========================= */
-
-        .container {
-            width: 100%;
-            max-width: 600px;
-
-            padding: 45px 28px 30px;
-
-            background: #172338;
-            border: 1px solid #293851;
-            border-radius: 20px;
-
-            box-shadow: 0 20px 60px #0003;
-
-            text-align: center;
-        }
-
-        /* =========================
-           LOGO
-        ========================= */
-
-        .logo {
-            display: block;
-
-            width: 162px;
-            max-width: 100%;
-            height: auto;
-
-            object-fit: contain;
-
-            margin: 0 auto 30px;
-
-            border-radius: 6px;
-        }
-
-        /* =========================
-           APRESENTAÇÃO
-        ========================= */
-
-        .tag {
-            color: #A78BFA;
-
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.8px;
-            text-transform: uppercase;
-
-            margin-bottom: 14px;
-        }
-
-        h1 {
-            font-size: clamp(27px, 5vw, 40px);
-            line-height: 1.2;
-            letter-spacing: -0.8px;
-
-            margin-bottom: 18px;
-        }
-
-        .intro {
-            color: #CBD5E1;
-
-            font-size: 15px;
-            line-height: 1.8;
-
-            margin-bottom: 32px;
-        }
-
-        /* =========================
-           CONTATOS
-        ========================= */
-
-        .contact-info {
-            padding-top: 30px;
-
-            border-top: 1px solid #354258;
-
-            text-align: left;
-        }
-
-        /* =========================
-           WHATSAPP
-        ========================= */
-
-        .contact-whatsapp {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-
-            margin-bottom: 32px;
-        }
-
-        .whatsapp-content {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-        }
-
-        .whatsapp-label {
-            color: #A78BFA;
-
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-        }
-
-        .whatsapp-content h2 {
-            color: #FFFFFF;
-
-            font-size: clamp(20px, 3vw, 25px);
-            font-weight: 800;
-            line-height: 1.3;
-            letter-spacing: -0.4px;
-        }
-
-        .whatsapp-content p {
-            color: #CBD5E1;
-
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        /* Botão WhatsApp */
-
-        .whatsapp-btn {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 14px;
-
-            width: 100%;
-            min-height: 76px;
-
-            padding: 15px 18px;
-
-            background: #25D366;
-            color: #10351F;
-
-            border: 1px solid #3CE477;
-            border-radius: 14px;
-
-            text-decoration: none;
-
-            transition:
-                background 0.2s,
-                transform 0.2s,
-                box-shadow 0.2s;
-        }
-
-        .whatsapp-btn:hover {
-            background: #35E477;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px #25D36625;
-        }
-
-        .whatsapp-btn:focus-visible {
-            outline: 3px solid #FFFFFF;
-            outline-offset: 4px;
-        }
-
-        .whatsapp-icon {
-            width: 38px;
-            height: 38px;
-
-            flex-shrink: 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .whatsapp-icon svg {
-            width: 35px;
-            height: 35px;
-        }
-
-        .whatsapp-text {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-
-            min-width: 0;
-            text-align: left;
-        }
-
-        .whatsapp-btn strong {
-            font-size: 15px;
-            font-weight: 800;
-            line-height: 1.4;
-        }
-
-        .whatsapp-btn small {
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .whatsapp-arrow {
-            margin-left: auto;
-            flex-shrink: 0;
-
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* =========================
-           ENDEREÇO E E-MAIL
-        ========================= */
-
-        .contact-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 26px;
-
-            width: 100%;
-            text-align: left;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: 14px;
-
-            width: 100%;
-            text-align: left;
-        }
-
-        /* Ícones */
-
-        .info-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            flex-shrink: 0;
-
-            width: 48px;
-            height: 48px;
-
-            background: #26344B;
-            border: 1px solid #354258;
-            border-radius: 13px;
-
-            color: #B69AFF;
-        }
-
-        .info-icon svg {
-            width: 23px;
-            height: 23px;
-        }
-
-        /* Textos */
-
-        .address-content {
-            flex: 1;
-            min-width: 0;
-
-            text-align: left;
-        }
-
-        .info-item h3 {
-            color: #B69AFF;
-
-            font-size: 17px;
-            font-weight: 800;
-            line-height: 1.4;
-
-            margin: 1px 0 9px;
-
-            text-align: left;
-        }
-
-        .info-item p {
-            color: #F1F5F9;
-
-            font-size: 15px;
-            font-weight: 500;
-            line-height: 1.9;
-
-            margin: 0;
-
-            text-align: left;
-            overflow-wrap: anywhere;
-        }
-
-        .info-item a {
-            color: #F1F5F9;
-            text-decoration: none;
-        }
-
-        .info-item a:hover {
-            color: #B69AFF;
-            text-decoration: underline;
-        }
-
-        /* =========================
-           STATUS E RODAPÉ
-        ========================= */
-
-        .status {
-            display: inline-block;
-
-            margin-top: 30px;
-            padding: 12px 24px;
-
-            background: #A78BFA;
-            color: #101828;
-
-            border-radius: 50px;
-
-            font-size: 14px;
-            font-weight: 800;
-        }
-
-        footer {
-            margin-top: 28px;
-
-            color: #94A3B8;
-
-            font-size: 12px;
-            line-height: 1.7;
-        }
-
-        /* =========================
-           RESPONSIVIDADE
-        ========================= */
-
-        @media (max-width: 480px) {
-            body {
-                padding: 14px;
-                align-items: flex-start;
-            }
-
-            .container {
-                padding: 35px 20px 26px;
-                border-radius: 16px;
-            }
-
-            .logo {
-                width: 145px;
-                margin-bottom: 26px;
-            }
-
-            .tag {
-                font-size: 10px;
-                letter-spacing: 1.3px;
-            }
-
-            h1 {
-                font-size: 29px;
-            }
-
-            .intro {
-                font-size: 14px;
-            }
-
-            .contact-info {
-                padding-top: 24px;
-            }
-
-            .whatsapp-btn {
-                gap: 10px;
-                padding: 14px 12px;
-            }
-
-            .whatsapp-btn strong {
-                font-size: 13px;
-            }
-
-            .whatsapp-btn small {
-                font-size: 12px;
-            }
-
-            .whatsapp-icon {
-                width: 30px;
-                height: 30px;
-            }
-
-            .whatsapp-icon svg {
-                width: 29px;
-                height: 29px;
-            }
-
-            .whatsapp-arrow {
-                font-size: 20px;
-            }
-
-            .info-item h3 {
-                font-size: 16px;
-            }
-
-            .info-item p {
-                font-size: 14px;
-            }
-        }
-
-        /* Respeita usuários que preferem menos movimento */
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                transition: none !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Início – Cartório Arquimedes Bucar</title>
+  <meta name="description" content="Cartório Arquimedes Bucar, 2º Ofício de Guaraciaba do Norte – CE. Notas, Protesto, Registro de Imóveis, Títulos e Documentos e Pessoas Jurídicas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/componentes.css" />
+  <link rel="stylesheet" href="css/paginas.css" />
 </head>
+<body data-pagina="index">
+  <div id="site-cabecalho"></div>
 
-<body>
-
-    <main class="container">
-
-        <!-- Logo -->
-        <img
-            src="./img/01-logo-arquimedes.jpg"
-            alt="Cartório Arquimedes Bucar"
-            class="logo"
-        >
-
-        <!-- Apresentação -->
-        <div class="tag">
-            Estamos trabalhando nisso
+  <main id="conteudo">
+    <section class="abertura" aria-labelledby="titulo-abertura">
+      <div class="container abertura__grade">
+        <div>
+          <p class="abertura__olho">Comarca de Guaraciaba do Norte · Ceará</p>
+          <h1 id="titulo-abertura">Cartório Arquimedes Bucar</h1>
+          <p class="abertura__linha">
+            Segurança e confiança para seus atos notariais e registrais.
+          </p>
+          <p class="abertura__texto">
+            Serviços prestados com fé pública, transparência e atenção a cada caso.
+          </p>
+          <div class="botoes">
+            <a class="botao botao--contraste" href="servicos.html">Conheça nossos serviços</a>
+            <a class="botao botao--claro" href="#" data-wa="duvida" rel="noopener" target="_blank">Falar no WhatsApp</a>
+          </div>
         </div>
+        <div class="abertura__figura" aria-hidden="true">
+          <!-- Elemento decorativo. Substituir por <img> quando houver foto da fachada. -->
+          <svg viewBox="0 0 360 300" role="presentation" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="1.1">
+              <path d="M20 280 V150 a40 40 0 0 1 80 0 V280" />
+              <path d="M140 280 V150 a40 40 0 0 1 80 0 V280" />
+              <path d="M260 280 V150 a40 40 0 0 1 80 0 V280" />
+              <path d="M0 280 H360" />
+              <path d="M8 268 H352" stroke-opacity="0.5" />
+              <path d="M40 280 V170" stroke-opacity="0.45" />
+              <path d="M80 280 V170" stroke-opacity="0.45" />
+              <path d="M160 280 V170" stroke-opacity="0.45" />
+              <path d="M200 280 V170" stroke-opacity="0.45" />
+              <path d="M280 280 V170" stroke-opacity="0.45" />
+              <path d="M320 280 V170" stroke-opacity="0.45" />
+              <path d="M0 96 H360" stroke-opacity="0.6" />
+              <path d="M0 104 H360" stroke-opacity="0.3" />
+              <path d="M40 96 L180 24 L320 96" stroke-opacity="0.6" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
 
-        <h1>
-            Página em construção
-        </h1>
+    <section class="faixa faixa--branca faixa--compacta" aria-label="Informações de atendimento">
+      <div class="container informacoes">
+        <div class="informacao">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3.2 2" />
+          </svg>
+          <p>
+            <span class="informacao__rotulo">Atendimento</span>
+            <span class="informacao__valor"><span data-campo="horario"></span></span>
+          </p>
+        </div>
+        <div class="informacao">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+          <p>
+            <span class="informacao__rotulo">Endereço</span>
+            <span class="informacao__valor"><span data-campo="endereco"></span><br /><span data-campo="cidade"></span> – <span data-campo="uf"></span></span>
+          </p>
+        </div>
+        <div class="informacao">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4.5 5.5A1.5 1.5 0 0 1 6 4h2l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v2a1.5 1.5 0 0 1-1.5 1.5A16 16 0 0 1 4.5 5.5z" />
+          </svg>
+          <p>
+            <span class="informacao__rotulo">Telefone</span>
+            <span class="informacao__valor"><a href="#" data-link="telefone"><span data-campo="telefone"></span></a></span>
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <p class="intro">
-            Estamos preparando algo especial para você.
-            Nosso site está passando por melhorias.
-            Em breve, teremos novidades!
+    <section class="faixa faixa--creme" aria-labelledby="titulo-atribuicoes">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="secao__rotulo">Atribuições</span>
+          <h2 id="titulo-atribuicoes">Cinco especialidades em uma serventia</h2>
+          <p class="secao__intro sem-margem">
+            Selecione uma atribuição para ver os serviços prestados e a documentação
+            necessária em cada um.
+          </p>
+        </div>
+        <div data-render="cartoes-atribuicoes"></div>
+      </div>
+    </section>
+
+    <section class="faixa faixa--branca" aria-labelledby="titulo-sobre">
+      <div class="container">
+        <span class="secao__rotulo">O cartório</span>
+        <h2 id="titulo-sobre">Fé pública a serviço da comunidade</h2>
+        <div class="prosa">
+          <p>
+            Os serviços notariais e de registro são exercidos por delegação do Poder
+            Público e fiscalizados pelo Poder Judiciário. Cada ato praticado nesta
+            serventia tem fé pública e produz efeitos perante qualquer pessoa, órgão ou
+            instituição do país.
+          </p>
+          <p>
+            Atendemos a população de Guaraciaba do Norte e região com orientação clara
+            sobre cada procedimento, para que ninguém precise voltar ao balcão por falta
+            de um documento.
+          </p>
+          <p class="sem-margem">
+            <a class="botao botao--secundario" href="o-cartorio.html">Sobre a serventia</a>
+          </p>
+        </div>
+        <div class="espaco-acima">
+        <div data-render="aviso-rcpn"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faixa faixa--creme" aria-labelledby="titulo-online">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="secao__rotulo">Serviços on-line</span>
+          <h2 id="titulo-online">Resolva sem sair de casa</h2>
+        </div>
+        <div class="grade">
+          <article class="cartao cartao--link">
+            <h3 class="cartao__titulo"><a href="certidoes.html">Pedidos de certidão</a></h3>
+            <p>Portais oficiais para solicitar certidões pela internet.</p>
+            <p class="cartao__rodape"><a href="certidoes.html">Acessar →</a></p>
+          </article>
+          <article class="cartao cartao--link">
+            <h3 class="cartao__titulo"><a href="selo-digital.html">Selo digital</a></h3>
+            <p>Confira a autenticidade de um documento expedido por nós.</p>
+            <p class="cartao__rodape"><a href="selo-digital.html">Conferir →</a></p>
+          </article>
+          <article class="cartao cartao--link">
+            <h3 class="cartao__titulo"><a href="emolumentos.html">Tabela de emolumentos</a></h3>
+            <p>Valores fixados por lei estadual e divulgados pelo TJCE.</p>
+            <p class="cartao__rodape"><a href="emolumentos.html">Consultar →</a></p>
+          </article>
+          <article class="cartao cartao--link">
+            <h3 class="cartao__titulo"><a href="modelos.html">Modelos e requerimentos</a></h3>
+            <p>Formulários para preencher antes de vir ao cartório.</p>
+            <p class="cartao__rodape"><a href="modelos.html">Baixar →</a></p>
+          </article>
+          <article class="cartao cartao--link">
+            <h3 class="cartao__titulo"><a href="duvidas.html">Dúvidas frequentes</a></h3>
+            <p>As perguntas que mais chegam ao nosso atendimento.</p>
+            <p class="cartao__rodape"><a href="duvidas.html">Ver respostas →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faixa faixa--navy" aria-labelledby="titulo-pedido">
+      <div class="container">
+        <span class="secao__rotulo">Acompanhamento</span>
+        <h2 id="titulo-pedido">Consulte o andamento do seu pedido</h2>
+        <p>
+          Informe o número do protocolo pelo WhatsApp e o atendimento retorna com a
+          situação do seu pedido.
         </p>
+        <p class="sem-margem">
+          <a class="botao botao--contraste" href="#" data-wa="pedido" rel="noopener" target="_blank">Consultar meu pedido</a>
+        </p>
+      </div>
+    </section>
+  </main>
 
-        <!-- Contatos -->
-        <section class="contact-info" aria-label="Informações de contato">
+ <div id="site-rodape"></div>
 
-            <!-- WhatsApp -->
-            <div class="contact-whatsapp">
-
-                <div class="whatsapp-content">
-                    <span class="whatsapp-label">
-                        PRECISA DE ATENDIMENTO?
-                    </span>
-
-                    <h2>
-                        Fale conosco pelo WhatsApp
-                    </h2>
-
-                    <p>
-                        Entre em contato com nossa equipe.
-                    </p>
-                </div>
-
-                <a
-                    href="https://wa.me/558888127535"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="whatsapp-btn"
-                    aria-label="Conversar pelo WhatsApp no número +55 88 8812-7535"
-                >
-
-                    <!-- Ícone WhatsApp em SVG -->
-                    <span class="whatsapp-icon" aria-hidden="true">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path d="M20.5 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.8a8.4 8.4 0 1 1 16.3-3.7Z"/>
-                            <path d="M8.5 8.5c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.7 1.7c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.7 2.4 2.2.3.2.5.2.7-.1l.8-1c.2-.2.4-.3.7-.2l1.7.8c.3.1.4.3.4.5 0 .4-.2 1.1-.6 1.4-.5.5-1.2.7-2 .6-1.1-.2-2.4-.8-3.8-2-1.2-1-2.1-2.4-2.4-3.3-.3-.9 0-1.8.3-2.5Z"/>
-                        </svg>
-                    </span>
-
-                    <span class="whatsapp-text">
-                        <strong>
-                            Conversar pelo WhatsApp
-                        </strong>
-
-                        <small>
-                            +55 88 8812-7535
-                        </small>
-                    </span>
-
-                    <span class="whatsapp-arrow" aria-hidden="true">
-                        ↗
-                    </span>
-
-                </a>
-
-            </div>
-
-            <!-- Endereço e e-mail -->
-            <div class="contact-grid">
-
-                <!-- Endereço -->
-                <div class="info-item">
-
-                    <span class="info-icon" aria-hidden="true">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
-                            <circle cx="12" cy="10" r="2.5"/>
-                        </svg>
-                    </span>
-
-                    <div class="address-content">
-                        <h3>Nosso endereço</h3>
-
-                        <p>
-                            Rua Capitão Ferreira, 730<br>
-                            Guaraciaba do Norte - CE
-                        </p>
-                    </div>
-
-                </div>
-
-                <!-- E-mail -->
-                <div class="info-item">
-
-                    <span class="info-icon" aria-hidden="true">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <rect x="3" y="5" width="18" height="14" rx="2"/>
-                            <path d="m3 7 9 6 9-6"/>
-                        </svg>
-                    </span>
-
-                    <div class="address-content">
-                        <h3>E-mail</h3>
-
-                        <p>
-                           
-
-<p>
-    <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=2cartorioguaraciaba%40gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        2cartorioguaraciaba@gmail.com
-    </a>
-</p>
-
-
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Status -->
-        <span class="status">
-            Voltamos em breve
-        </span>
-
-        <!-- Rodapé -->
-        <footer>
-            &copy; 2026 — Cartório Arquimedes Bucar - 2° Ofício de Notas e de Registro de Imóveis de Guaraciaba do Norte/CE
-        </footer>
-
-    </main>
-
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>

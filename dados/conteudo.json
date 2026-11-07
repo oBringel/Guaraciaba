@@ -1,0 +1,180 @@
+{
+  "_comoEditar": "Conteúdo das páginas internas que é repetido ou editado com frequência: aviso sobre registro civil, portais de certidões, perguntas frequentes, modelos para download e Agenda 2030. Os textos com HTML aceitam links e negrito.",
+
+  "sobre": {
+    "apresentacao": "<p>[PREENCHER: histórico da serventia, tempo de atuação e abrangência do atendimento.]</p>",
+    "missao": "[PREENCHER: texto da missão]",
+    "visao": "[PREENCHER: texto da visão]",
+    "valores": "[PREENCHER: texto dos valores]"
+  },
+
+  "avisoRegistroCivil": {
+    "titulo": "Atenção",
+    "html": "Esta serventia <strong>não possui atribuição de Registro Civil das Pessoas Naturais</strong>. Certidões de nascimento, casamento e óbito não são emitidas aqui — veja em <a href=\"certidoes.html\">Certidões</a> onde solicitá-las."
+  },
+
+  "portaisCertidoes": [
+    {
+      "titulo": "e-Notariado — portal nacional de Notas",
+      "descricao": "Plataforma do Colégio Notarial do Brasil. Atos por videoconferência, certificado digital notarizado e certidões de escrituras e procurações.",
+      "link": "eNotariado"
+    },
+    {
+      "titulo": "Registro de Imóveis do Brasil — portal nacional do RI",
+      "descricao": "Todos os serviços eletrônicos do Registro de Imóveis reunidos: certidão de matrícula, ônus reais, pesquisa de bens e protocolo eletrônico.",
+      "link": "registroImoveis"
+    },
+    {
+      "titulo": "Mapa ONR — consulta territorial de imóveis",
+      "descricao": "Visualização geográfica de imóveis registrados, mantida pelo Operador Nacional do Registro de Imóveis.",
+      "link": "mapaOnr"
+    },
+    {
+      "titulo": "CENPROT — consulta e certidões de protesto",
+      "descricao": "Central Nacional de Protesto. Consulta de protestos em âmbito nacional e emissão de certidões.",
+      "link": "cenprot"
+    },
+    {
+      "titulo": "CENSEC — busca de testamentos e escrituras",
+      "descricao": "Central Nacional de Serviços Eletrônicos Compartilhados. Emite a certidão de existência de testamento exigida em inventários.",
+      "link": "censec"
+    },
+    {
+      "titulo": "Registro Civil — nascimento, casamento e óbito",
+      "descricao": "Portal do Registro Civil. Certidões de qualquer cartório do país — atribuição que esta serventia não possui.",
+      "link": "registroCivil"
+    }
+  ],
+
+  "certidoesBalcao": [
+    "Certidão de matrícula de imóvel (inteiro teor)",
+    "Certidão de ônus reais",
+    "Certidão negativa de propriedade",
+    "Certidão positiva ou negativa de protesto",
+    "Certidão de escritura lavrada nesta serventia",
+    "Certidão de documento registrado em Títulos e Documentos",
+    "Certidão de entidade registrada em Pessoas Jurídicas"
+  ],
+
+  "faq": [
+    {
+      "pergunta": "Vocês emitem certidão de nascimento, casamento ou óbito?",
+      "html": "<p>Não. Esta serventia não possui a atribuição de Registro Civil das Pessoas Naturais. Essas certidões devem ser solicitadas no cartório de registro civil onde o ato foi lavrado, ou pela internet, no <a data-link=\"registroCivil\" rel=\"external noopener\" target=\"_blank\">Portal do Registro Civil</a>.</p>"
+    },
+    {
+      "pergunta": "Como consulto o andamento do meu pedido?",
+      "html": "<p>Envie o número do protocolo pelo WhatsApp do cartório. O atendimento retorna com a situação do pedido.</p><p class=\"sem-margem\"><a class=\"botao botao--secundario\" data-wa=\"pedido\" rel=\"noopener\" target=\"_blank\">Consultar pelo WhatsApp</a></p>"
+    },
+    {
+      "pergunta": "O que é abertura de firma e por que preciso fazer isso?",
+      "html": "<p>A abertura de firma é o cadastro da sua assinatura no cartório, feito uma única vez, com comparecimento pessoal e documento de identidade original. Sem esse cadastro prévio não é possível reconhecer firma por semelhança.</p><p class=\"sem-margem\">O cartório só reconhece firmas de assinaturas cadastradas nesta serventia.</p>"
+    },
+    {
+      "pergunta": "Quanto custa cada serviço?",
+      "html": "<p class=\"sem-margem\">Os valores são fixados por lei estadual e divulgados pelo Tribunal de Justiça do Ceará. Consulte a página de <a href=\"emolumentos.html\">emolumentos</a> ou fale com o atendimento.</p>"
+    },
+    {
+      "pergunta": "Preciso agendar atendimento?",
+      "html": "<p class=\"sem-margem\">[PREENCHER: o atendimento é por ordem de chegada ou há agendamento? Para quais serviços?]</p>"
+    },
+    {
+      "pergunta": "Quais formas de pagamento são aceitas?",
+      "html": "<p class=\"sem-margem\">[PREENCHER: dinheiro, PIX, cartão de débito, cartão de crédito?]</p>"
+    },
+    {
+      "pergunta": "Posso resolver algum ato sem ir ao cartório?",
+      "html": "<p class=\"sem-margem\">Sim. Parte dos atos notariais pode ser praticada por videoconferência pela plataforma <a data-link=\"eNotariado\" rel=\"external noopener\" target=\"_blank\">e-Notariado</a>, desde que o interessado possua certificado digital notarizado — que também é emitido nesta serventia.</p>"
+    },
+    {
+      "pergunta": "Como faço para abrir uma empresa?",
+      "html": "<p class=\"sem-margem\">Empresas com finalidade lucrativa (LTDA, sociedade anônima, empresário individual e MEI) são registradas na Junta Comercial do Estado do Ceará. Aqui são registradas associações, fundações, organizações religiosas e sociedades simples — veja <a href=\"servicos-pessoas-juridicas.html\">Registro Civil de Pessoas Jurídicas</a>.</p>"
+    },
+    {
+      "pergunta": "Perdi minha escritura. Como consigo outra via?",
+      "html": "<p class=\"sem-margem\">A escritura fica arquivada em livro próprio no cartório onde foi lavrada. Basta solicitar uma certidão do ato, apresentando documento de identidade e os dados do negócio. Se a escritura foi lavrada aqui, fale com o atendimento.</p>"
+    },
+    {
+      "pergunta": "Recebi uma intimação de protesto. O que devo fazer?",
+      "html": "<p class=\"sem-margem\">Procure o cartório dentro do prazo indicado na intimação. O pagamento nesse prazo evita que o protesto seja lavrado. Se a cobrança for indevida, informe o atendimento e procure orientação jurídica — veja <a href=\"servicos-protesto.html\">Tabelionato de Protesto</a>.</p>"
+    }
+  ],
+
+  "modelos": [
+    {
+      "titulo": "Requerimento de certidão",
+      "descricao": "PDF · preencher e assinar",
+      "arquivo": "arquivos/requerimento-certidao.pdf"
+    },
+    {
+      "titulo": "Declaração de hipossuficiência",
+      "descricao": "PDF · para solicitação de gratuidade",
+      "arquivo": "arquivos/declaracao-pobreza.pdf"
+    },
+    {
+      "titulo": "Requerimento de cancelamento de protesto",
+      "descricao": "PDF · acompanhar de título quitado ou carta de anuência",
+      "arquivo": "arquivos/requerimento-cancelamento-protesto.pdf"
+    },
+    {
+      "titulo": "Modelo de carta de anuência",
+      "descricao": "PDF · assinatura do credor com firma reconhecida",
+      "arquivo": "arquivos/carta-anuencia.pdf"
+    },
+    {
+      "titulo": "Autorização de viagem para menor",
+      "descricao": "PDF · modelo para preenchimento",
+      "arquivo": "arquivos/autorizacao-viagem-menor.pdf"
+    }
+  ],
+
+  "ods": [
+    {
+      "codigo": "ODS 16",
+      "titulo": "Paz, justiça e instituições eficazes",
+      "texto": "É o objetivo mais diretamente ligado à atividade extrajudicial. Cada ato praticado com fé pública previne conflitos e evita que demandas cheguem ao Judiciário.",
+      "itens": [
+        "Inventário, partilha e divórcio extrajudiciais",
+        "Usucapião e adjudicação compulsória extrajudiciais",
+        "Ata notarial como meio de prova",
+        "Autenticação de documentos e reconhecimento de firma"
+      ]
+    },
+    {
+      "codigo": "ODS 1",
+      "titulo": "Erradicação da pobreza",
+      "texto": "As gratuidades previstas em lei garantem acesso aos serviços a quem não pode arcar com os emolumentos.",
+      "itens": [
+        "Atos gratuitos a pessoas reconhecidamente pobres, mediante declaração",
+        "Orientação sobre direitos sem custo"
+      ]
+    },
+    {
+      "codigo": "ODS 10",
+      "titulo": "Redução das desigualdades",
+      "texto": "O atendimento é universal e o mesmo para todos, independentemente da condição social de quem procura a serventia.",
+      "itens": [
+        "Atendimento presencial sem necessidade de intermediário",
+        "Orientação em linguagem acessível sobre cada procedimento"
+      ]
+    },
+    {
+      "codigo": "ODS 11",
+      "titulo": "Cidades e comunidades sustentáveis",
+      "texto": "A regularização imobiliária dá segurança jurídica à moradia e organiza o território do município.",
+      "itens": [
+        "Registro de imóveis e averbação de construções",
+        "Usucapião extrajudicial e retificação de área",
+        "Registro de loteamentos e incorporações"
+      ]
+    },
+    {
+      "codigo": "ODS 17",
+      "titulo": "Parcerias e meios de implementação",
+      "texto": "O registro de entidades sem fins lucrativos viabiliza a atuação organizada da sociedade civil.",
+      "itens": [
+        "Registro de associações, fundações e organizações religiosas",
+        "Registro de atas e alterações estatutárias"
+      ]
+    }
+  ]
+}

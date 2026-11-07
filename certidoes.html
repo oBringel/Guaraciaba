@@ -13,44 +13,8 @@
   <link rel="stylesheet" href="css/componentes.css" />
   <link rel="stylesheet" href="css/paginas.css" />
 </head>
-<body>
-  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
-
-  <header class="cabecalho">
-    <div class="container cabecalho__interno">
-      <a class="marca" href="index.html">
-        <span class="marca__nome">Cartório Arquimedes Bucar</span>
-        <span class="marca__desc">2º Ofício de Guaraciaba do Norte · Serviços Notariais e Registrais</span>
-      </a>
-
-      <p class="cabecalho__contato">
-        <a href="tel:+558888127535">(88) 8812-7535</a><br />
-        Segunda a sexta, 08h às 16h
-      </p>
-
-      <!-- Menu do celular: alternado apenas com CSS, sem JavaScript -->
-      <input class="menu-alternador" type="checkbox" id="abrir-menu" />
-      <label class="menu-rotulo" for="abrir-menu">
-        <span class="menu-rotulo__icone" aria-hidden="true"></span>
-        <span class="menu-rotulo__texto">Menu</span>
-      </label>
-
-      <nav class="navegacao" aria-label="Navegação principal">
-        <ul class="navegacao__lista">
-          <li><a class="navegacao__link" href="index.html" aria-current="page">Início</a></li>
-          <li><a class="navegacao__link" href="o-cartorio.html">O Cartório</a></li>
-          <li><a class="navegacao__link" href="servicos.html">Serviços</a></li>
-          <li><a class="navegacao__link" href="certidoes.html">Certidões</a></li>
-          <li><a class="navegacao__link" href="selo-digital.html">Selo Digital</a></li>
-          <li><a class="navegacao__link" href="emolumentos.html">Emolumentos</a></li>
-          <li><a class="navegacao__link" href="transparencia.html">Transparência</a></li>
-          <li><a class="navegacao__link" href="agenda-2030.html">Agenda 2030</a></li>
-          <li><a class="navegacao__link" href="duvidas.html">Dúvidas</a></li>
-          <li><a class="navegacao__link" href="contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body data-pagina="certidoes">
+  <div id="site-cabecalho"></div>
 
   <div class="pagina-topo">
     <div class="container">
@@ -67,15 +31,7 @@
 
   <main class="container conteudo" id="conteudo">
     <section class="secao" aria-label="Aviso">
-        <div class="aviso">
-          <p class="aviso__titulo">Atenção</p>
-          <p class="sem-margem">
-            Esta serventia <strong>não possui atribuição de Registro Civil das Pessoas
-            Naturais</strong>. Certidões de nascimento, casamento e óbito não são
-            emitidas aqui — veja em
-            <a href="certidoes.html">Certidões</a> onde solicitá-las.
-          </p>
-        </div>
+        <div data-render="aviso-rcpn"></div>
     </section>
 
     <section class="secao" aria-labelledby="titulo-portais">
@@ -85,46 +41,7 @@
         certidões pela internet. Os links abaixo levam aos portais oficiais de cada
         especialidade.
       </p>
-      <div class="painel">
-        <ul class="lista-links">
-          <li>
-            <a href="https://www.e-notariado.org.br/customer" rel="external noopener" target="_blank">
-              e-Notariado — portal nacional de Notas
-              <span>Plataforma do Colégio Notarial do Brasil. Atos por videoconferência, certificado digital notarizado e certidões de escrituras e procurações.</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.registrodeimoveis.org.br/" rel="external noopener" target="_blank">
-              Registro de Imóveis do Brasil — portal nacional do RI
-              <span>Todos os serviços eletrônicos do Registro de Imóveis reunidos: certidão de matrícula, ônus reais, pesquisa de bens e protocolo eletrônico.</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://mapa.onr.org.br/" rel="external noopener" target="_blank">
-              Mapa ONR — consulta territorial de imóveis
-              <span>Visualização geográfica de imóveis registrados, mantida pelo Operador Nacional do Registro de Imóveis.</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.protestodetitulos.org.br/" rel="external noopener" target="_blank">
-              CENPROT — consulta e certidões de protesto
-              <span>Central Nacional de Protesto. Consulta de protestos em âmbito nacional e emissão de certidões.</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.censec.org.br/" rel="external noopener" target="_blank">
-              CENSEC — busca de testamentos e escrituras
-              <span>Central Nacional de Serviços Eletrônicos Compartilhados. Emite a certidão de existência de testamento exigida em inventários.</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.registrocivil.org.br/" rel="external noopener" target="_blank">
-              Registro Civil — nascimento, casamento e óbito
-              <span>Portal do Registro Civil. Certidões de qualquer cartório do país — atribuição que esta serventia não possui.</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <div data-render="portais-certidoes"></div>
     </section>
 
     <section class="secao" aria-labelledby="titulo-selo">
@@ -143,15 +60,7 @@
       <p class="secao__intro">
         As certidões abaixo podem ser solicitadas diretamente no balcão do cartório.
       </p>
-      <ul class="lista-servicos">
-        <li>Certidão de matrícula de imóvel (inteiro teor)</li>
-        <li>Certidão de ônus reais</li>
-        <li>Certidão negativa de propriedade</li>
-        <li>Certidão positiva ou negativa de protesto</li>
-        <li>Certidão de escritura lavrada nesta serventia</li>
-        <li>Certidão de documento registrado em Títulos e Documentos</li>
-        <li>Certidão de entidade registrada em Pessoas Jurídicas</li>
-      </ul>
+      <div data-render="certidoes-balcao"></div>
     </section>
 
     <section class="secao" aria-label="Solicitar certidão">
@@ -159,64 +68,14 @@
           <h2>Solicitar uma certidão</h2>
           <p>Informe pelo WhatsApp qual certidão você precisa e os dados do registro. O atendimento retorna com o prazo e o valor.</p>
           <p class="cta__acoes sem-margem">
-            <a class="botao botao--contraste" href="https://wa.me/558888127535?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." rel="noopener" target="_blank">Solicitar pelo WhatsApp</a>
+            <a class="botao botao--contraste" href="#" data-wa="duvida" rel="noopener" target="_blank">Solicitar pelo WhatsApp</a>
           </p>
         </div>
     </section>
   </main>
 
-  <footer class="rodape">
-    <div class="container">
-      <div class="rodape__grade">
-        <div>
-          <p class="rodape__titulo">Cartório Arquimedes Bucar</p>
-          <address>
-            [Rua, número, bairro]<br />
-            Guaraciaba do Norte – CE · CEP [CEP]<br />
-            Telefone: <a href="tel:+558888127535">(88) 8812-7535</a><br />
-            WhatsApp: <a href="https://wa.me/558888127535?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida.">(88) 8812-7535</a><br />
-            E-mail: <a href="mailto:@">@</a><br />
-            Instagram: <a href="https://www.instagram.com/2cartorioguaraciaba" rel="external noopener" target="_blank">@2cartorioguaraciaba</a>
-          </address>
-          <p class="sem-margem">Segunda a sexta, [08h às 17h]</p>
-        </div>
+  <div id="site-rodape"></div>
 
-        <div>
-          <p class="rodape__titulo">Atribuições</p>
-          <ul class="rodape__lista">
-            <li><a href="servicos-notas.html">Tabelionato de Notas</a></li>
-            <li><a href="servicos-protesto.html">Tabelionato de Protesto de Títulos</a></li>
-            <li><a href="servicos-registro-imoveis.html">Registro de Imóveis</a></li>
-            <li><a href="servicos-titulos-documentos.html">Registro de Títulos e Documentos</a></li>
-            <li><a href="servicos-pessoas-juridicas.html">Registro Civil de Pessoas Jurídicas</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="rodape__titulo">Institucional</p>
-          <ul class="rodape__lista">
-            <li><a href="transparencia.html">Transparência</a></li>
-            <li><a href="modelos.html">Modelos e requerimentos</a></li>
-            <li><a href="agenda-2030.html">Agenda 2030</a></li>
-            <li><a href="privacidade.html">Aviso de Privacidade e LGPD</a></li>
-            <li><a href="ouvidoria.html">Ouvidoria</a></li>
-            <li>
-              <a href="https://www.tjce.jus.br/" rel="external noopener" target="_blank">
-                Corregedoria-Geral de Justiça do Ceará
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="rodape__base">
-       
-        <p>
-          Os emolumentos dos serviços notariais e de registro são fixados por lei
-          estadual e divulgados pelo Tribunal de Justiça do Ceará.
-        </p>
-      </div>
-    </div>
-  </footer>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>

@@ -159,19 +159,12 @@
    Navegação principal
    -------------------------------------------------------------------------- */
 
-/* Alternador do menu no celular — só CSS, sem JavaScript.
-   Quando houver JavaScript, trocar por um <button> com aria-expanded. */
+/* Botão do menu no celular — o estado fica em aria-expanded,
+   controlado por js/layout.js. */
 
-.menu-alternador {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  margin: -1px;
-}
-
-.menu-rotulo {
+.menu-botao {
   display: inline-flex;
+  font-family: inherit;
   align-items: center;
   gap: var(--esp-2);
   justify-self: end;
@@ -186,25 +179,25 @@
   transition: border-color var(--transicao), background-color var(--transicao);
 }
 
-.menu-rotulo:hover {
+.menu-botao:hover {
   border-color: var(--primaria);
   background-color: var(--primaria-suave);
 }
 
-.menu-alternador:focus-visible + .menu-rotulo {
+.menu-botao:focus-visible {
   outline: 2px solid var(--primaria);
   outline-offset: 3px;
 }
 
-.menu-alternador:checked + .menu-rotulo {
+.menu-botao[aria-expanded="true"] {
   background-color: var(--primaria);
   border-color: var(--primaria);
   color: var(--branco);
 }
 
-.menu-rotulo__icone,
-.menu-rotulo__icone::before,
-.menu-rotulo__icone::after {
+.menu-botao__icone,
+.menu-botao__icone::before,
+.menu-botao__icone::after {
   display: block;
   width: 16px;
   height: 2px;
@@ -212,22 +205,22 @@
   background-color: currentColor;
 }
 
-.menu-rotulo__icone {
+.menu-botao__icone {
   position: relative;
 }
 
-.menu-rotulo__icone::before,
-.menu-rotulo__icone::after {
+.menu-botao__icone::before,
+.menu-botao__icone::after {
   content: "";
   position: absolute;
   left: 0;
 }
 
-.menu-rotulo__icone::before {
+.menu-botao__icone::before {
   top: -5px;
 }
 
-.menu-rotulo__icone::after {
+.menu-botao__icone::after {
   top: 5px;
 }
 
@@ -237,7 +230,7 @@
   padding-bottom: var(--esp-3);
 }
 
-.menu-alternador:checked ~ .navegacao {
+.navegacao.esta-aberto {
   display: block;
 }
 
@@ -524,7 +517,7 @@
     gap: var(--esp-4);
   }
 
-  .menu-rotulo {
+  .menu-botao {
     display: none;
   }
 
@@ -552,4 +545,16 @@
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: var(--esp-7);
   }
+}
+
+/* Aviso exibido quando os dados do site não puderem ser carregados. */
+
+.aviso-carregamento {
+  margin: 0;
+  padding: var(--esp-4) var(--esp-5);
+  background-color: #fdf1ea;
+  border-bottom: 1px solid #f2d4c4;
+  color: #7a2e12;
+  font-size: 0.9rem;
+  text-align: center;
 }

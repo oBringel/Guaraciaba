@@ -1,0 +1,295 @@
+{
+  "_comoEditar": "Cada item de 'atribuicoes' gera um cartão na página de Serviços e a página completa da especialidade. Altere títulos, listas de serviços e documentação aqui — o site inteiro se atualiza.",
+
+  "atribuicoes": [
+    {
+      "id": "notas",
+      "arquivo": "servicos-notas.html",
+      "titulo": "Tabelionato de Notas",
+      "resumo": "Reconhecimento e abertura de firma, autenticação de cópias, escrituras, procurações, inventário, testamento e atos eletrônicos.",
+      "intro": "O Tabelionato de Notas formaliza e dá fé pública a declarações de vontade e a fatos jurídicos, garantindo segurança e validade aos documentos.",
+      "servicos": [
+        "Abertura de firma",
+        "Reconhecimento de firma",
+        "Autenticação de cópias",
+        "Atos eletrônicos (e-Notariado)",
+        "Certificado digital do e-Notariado",
+        "Autorização de viagem para menores",
+        "Procuração e substabelecimento",
+        "Escritura de compra e venda de bens",
+        "Escritura de doação de bens",
+        "Inventário e partilha extrajudicial",
+        "Divórcio e separação extrajudicial",
+        "União estável",
+        "Pacto antenupcial",
+        "Testamento e planejamento sucessório",
+        "Emancipação",
+        "Usucapião extrajudicial",
+        "Ata notarial"
+      ],
+      "documentos": [
+        {
+          "titulo": "Abertura e reconhecimento de firma",
+          "itens": [
+            "Documento de identidade original com foto e assinatura (RG, CNH ou passaporte).",
+            "CPF.",
+            "Comparecimento pessoal do titular para a abertura da firma.",
+            "Para reconhecimento por autenticidade, quem assinou deve comparecer pessoalmente."
+          ]
+        },
+        {
+          "titulo": "Procuração",
+          "itens": [
+            "Documento de identidade e CPF de quem outorga os poderes.",
+            "Dados completos do procurador: nome, CPF, estado civil, profissão e endereço.",
+            "Descrição dos poderes a serem concedidos.",
+            "Se envolver imóvel, número da matrícula e dados do bem."
+          ]
+        },
+        {
+          "titulo": "Escritura de compra e venda de imóvel",
+          "itens": [
+            "Documentos de identidade e CPF de vendedores, compradores e respectivos cônjuges.",
+            "Certidão de casamento atualizada ou certidão de nascimento, conforme o estado civil.",
+            "Certidão de matrícula atualizada do imóvel.",
+            "Certidões exigidas em relação aos vendedores e ao imóvel.",
+            "Comprovante de recolhimento do ITBI.",
+            "Carnê de IPTU ou certidão de valor venal (imóvel urbano) ou CCIR e ITR (imóvel rural)."
+          ]
+        },
+        {
+          "titulo": "Escritura de doação",
+          "itens": [
+            "Documentos de identidade e CPF do doador, do donatário e dos cônjuges.",
+            "Certidão de estado civil das partes.",
+            "Certidão de matrícula atualizada, no caso de imóvel.",
+            "Comprovante de recolhimento do ITCD."
+          ]
+        },
+        {
+          "titulo": "Inventário e partilha extrajudicial",
+          "itens": [
+            "Certidão de óbito do falecido.",
+            "Documentos de identidade, CPF e certidões de estado civil do falecido e dos herdeiros.",
+            "Documentos de todos os bens e direitos a partilhar.",
+            "Certidão negativa de testamento (CENSEC).",
+            "Comprovante de recolhimento do ITCD.",
+            "Acompanhamento de advogado — exigência legal.",
+            "Todos os herdeiros devem ser maiores, capazes e estar de acordo."
+          ]
+        },
+        {
+          "titulo": "Divórcio e separação extrajudicial",
+          "itens": [
+            "Certidão de casamento atualizada.",
+            "Documentos de identidade e CPF de ambos os cônjuges.",
+            "Pacto antenupcial, se houver.",
+            "Relação dos bens e definição da partilha.",
+            "Acompanhamento de advogado — exigência legal.",
+            "O casal não pode ter filhos menores ou incapazes."
+          ]
+        },
+        {
+          "titulo": "União estável",
+          "itens": [
+            "Documentos de identidade e CPF de ambos os companheiros.",
+            "Certidão de nascimento ou de casamento com averbação do divórcio.",
+            "Definição do regime de bens a ser adotado."
+          ]
+        },
+        {
+          "titulo": "Autorização de viagem para menor",
+          "itens": [
+            "Certidão de nascimento ou documento de identidade do menor.",
+            "Documentos de identidade e CPF dos pais ou responsáveis.",
+            "Comparecimento de quem autoriza, ou firma reconhecida por autenticidade.",
+            "Dados do acompanhante e do destino da viagem."
+          ]
+        },
+        {
+          "titulo": "Testamento",
+          "itens": [
+            "Documento de identidade e CPF do testador, com comparecimento pessoal.",
+            "Relação dos bens e das disposições desejadas.",
+            "Duas testemunhas maiores e capazes, que não sejam beneficiárias do testamento."
+          ]
+        },
+        {
+          "titulo": "Emancipação",
+          "itens": [
+            "Certidão de nascimento do menor, que deve ter 16 anos completos.",
+            "Documentos de identidade e CPF dos pais.",
+            "Comparecimento de ambos os pais e do menor."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "protesto",
+      "arquivo": "servicos-protesto.html",
+      "titulo": "Tabelionato de Protesto de Títulos",
+      "resumo": "Apresentação e protesto de títulos, pagamento, cancelamento e certidões de protesto.",
+      "intro": "O protesto é o ato formal que comprova o não pagamento de um título ou de outro documento de dívida, servindo tanto como prova quanto como meio de cobrança.",
+      "servicos": [
+        "Apresentação de títulos para protesto",
+        "Pagamento de título protestado",
+        "Cancelamento de protesto",
+        "Certidão positiva ou negativa de protesto",
+        "Desistência e sustação de protesto",
+        "Anuência eletrônica"
+      ],
+      "documentos": [
+        {
+          "titulo": "Pagar um título protestado",
+          "itens": [
+            "Documento de identidade do devedor ou de quem efetua o pagamento.",
+            "Número do protocolo constante na intimação recebida.",
+            "Pagamento do valor do título acrescido dos emolumentos e demais despesas.",
+            "O pagamento dentro do prazo da intimação evita a lavratura do protesto."
+          ]
+        },
+        {
+          "titulo": "Cancelar um protesto já lavrado",
+          "itens": [
+            "Título original quitado, ou carta de anuência do credor com firma reconhecida.",
+            "Documento de identidade de quem solicita o cancelamento.",
+            "Pagamento dos emolumentos de cancelamento."
+          ]
+        },
+        {
+          "titulo": "Certidão de protesto",
+          "itens": [
+            "Nome completo e CPF ou CNPJ do pesquisado.",
+            "Documento de identidade do solicitante.",
+            "A certidão pode ser positiva (com protestos) ou negativa (sem protestos)."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "registro-imoveis",
+      "arquivo": "servicos-registro-imoveis.html",
+      "titulo": "Registro de Imóveis",
+      "resumo": "Registro de compra e venda, hipoteca, alienação fiduciária, averbações e certidões de matrícula.",
+      "intro": "O Registro de Imóveis dá publicidade e segurança jurídica à propriedade imobiliária. É o registro, e não a escritura, que transfere a propriedade do imóvel.",
+      "servicos": [
+        "Registro de escritura de compra e venda",
+        "Registro de hipoteca e alienação fiduciária",
+        "Averbação de construção e demolição",
+        "Averbação de casamento, divórcio e óbito",
+        "Retificação de área",
+        "Usucapião extrajudicial",
+        "Adjudicação compulsória extrajudicial",
+        "Certidão de matrícula (inteiro teor)",
+        "Certidão de ônus reais",
+        "Certidão negativa de propriedade",
+        "Registro de loteamento e incorporação"
+      ],
+      "documentos": [
+        {
+          "titulo": "Certidão de matrícula",
+          "itens": [
+            "Número da matrícula do imóvel, quando conhecido.",
+            "Na falta do número, endereço completo do imóvel e nome do proprietário.",
+            "Documento de identidade do solicitante."
+          ]
+        },
+        {
+          "titulo": "Registro de escritura de compra e venda",
+          "itens": [
+            "Via original da escritura pública ou do contrato registrável.",
+            "Comprovante de recolhimento do ITBI.",
+            "Documentos de identidade e CPF das partes.",
+            "Pagamento dos emolumentos conforme o valor do imóvel."
+          ]
+        },
+        {
+          "titulo": "Averbação de construção",
+          "itens": [
+            "Certidão de matrícula atualizada do imóvel.",
+            "Habite-se ou certidão equivalente emitida pela Prefeitura.",
+            "Certidão negativa de débitos da obra (CND da obra), quando exigida.",
+            "Documentos de identidade e CPF do proprietário."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "titulos-documentos",
+      "arquivo": "servicos-titulos-documentos.html",
+      "titulo": "Registro de Títulos e Documentos",
+      "resumo": "Registro de contratos em geral, notificação extrajudicial e conservação de documentos.",
+      "intro": "O Registro de Títulos e Documentos conserva documentos e dá a eles efeito contra terceiros, servindo também para notificar formalmente uma pessoa ou empresa.",
+      "servicos": [
+        "Registro de contratos em geral",
+        "Registro de documentos para conservação",
+        "Notificação extrajudicial",
+        "Registro de documentos estrangeiros traduzidos",
+        "Certidões de documentos registrados"
+      ],
+      "documentos": [
+        {
+          "titulo": "Notificação extrajudicial",
+          "itens": [
+            "Texto da notificação, assinado pelo notificante.",
+            "Nome completo e endereço exato do notificado.",
+            "Documento de identidade e CPF ou CNPJ do notificante.",
+            "Pagamento dos emolumentos e das despesas de entrega."
+          ]
+        },
+        {
+          "titulo": "Registro de contrato",
+          "itens": [
+            "Via original do contrato, assinada por todas as partes.",
+            "Documento de identidade do apresentante.",
+            "Assinatura de duas testemunhas, quando o documento exigir."
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "pessoas-juridicas",
+      "arquivo": "servicos-pessoas-juridicas.html",
+      "titulo": "Registro Civil de Pessoas Jurídicas",
+      "resumo": "Registro de associações, fundações, sociedades simples, atas e alterações estatutárias.",
+      "intro": "O Registro Civil de Pessoas Jurídicas dá personalidade jurídica a entidades sem fins lucrativos e a sociedades simples, além de registrar jornais e editoras.",
+      "servicos": [
+        "Registro de associações e ONGs",
+        "Registro de fundações",
+        "Registro de sociedades simples",
+        "Registro de organizações religiosas",
+        "Registro de atas e alterações estatutárias",
+        "Registro de jornais, revistas e editoras",
+        "Certidões de entidades registradas"
+      ],
+      "documentos": [
+        {
+          "titulo": "Constituição de associação",
+          "itens": [
+            "Ata da assembleia de fundação, com lista de presença assinada.",
+            "Estatuto social assinado pelo presidente e pelos fundadores.",
+            "Documentos de identidade e CPF dos membros da diretoria eleita.",
+            "Visto de advogado com número da OAB nos documentos."
+          ]
+        },
+        {
+          "titulo": "Alteração de estatuto ou de diretoria",
+          "itens": [
+            "Ata da assembleia que aprovou a alteração.",
+            "Estatuto consolidado, quando houver mudança no texto.",
+            "Documentos de identidade e CPF da nova diretoria.",
+            "Visto de advogado com número da OAB."
+          ]
+        }
+      ],
+      "aviso": {
+        "titulo": "Atenção",
+        "html": "Empresas com finalidade lucrativa — LTDA, sociedade anônima, empresário individual e MEI — são registradas na <strong>Junta Comercial do Estado do Ceará (JUCEC)</strong>, e não nesta serventia."
+      }
+    }
+  ]
+}

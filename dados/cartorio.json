@@ -1,0 +1,83 @@
+{
+  "_comoEditar": "Este é o único arquivo que precisa ser alterado para atualizar telefone, endereço, horário, e-mail, redes sociais e links oficiais. Salve e envie para o servidor: todas as páginas do site passam a mostrar o novo conteúdo.",
+
+  "identificacao": {
+    "nomeCurto": "Cartório Arquimedes Bucar",
+    "descritor": "2º Ofício de Guaraciaba do Norte · Serviços Notariais e Registrais",
+    "nomeOficial": "[PREENCHER: denominação oficial da serventia]",
+    "titular": "[PREENCHER: nome do tabelião / oficial titular]",
+    "cns": "[PREENCHER: CNS]",
+    "comarca": "Guaraciaba do Norte",
+    "uf": "CE"
+  },
+
+  "endereco": {
+    "logradouro": "Rua Capitão Ferreira, 730",
+    "cidade": "Guaraciaba do Norte",
+    "uf": "CE",
+    "cep": "[PREENCHER: CEP]",
+    "consultaMapa": ""
+  },
+
+  "contato": {
+    "telefone": "(88) 8812-7535",
+    "telefoneLink": "+558888127535",
+    "whatsapp": "(88) 98812-7535",
+    "whatsappNumero": "5588988127535",
+    "email": "arquimedesbucar@yahoo.com.br",
+    "instagram": "@2cartorioguaraciaba",
+    "instagramUrl": "https://www.instagram.com/2cartorioguaraciaba"
+  },
+
+  "atendimento": {
+    "resumo": "Segunda a sexta, 08h às 16h",
+    "tabela": [
+      { "dia": "Segunda a sexta", "horario": "08h às 16h" },
+      { "dia": "Sábado", "horario": "Fechado" },
+      { "dia": "Domingo e feriados", "horario": "Fechado" }
+    ],
+    "observacao": "Em vésperas de feriado e em recessos o horário pode ser reduzido. Confirme pelo telefone antes de se deslocar."
+  },
+
+  "responsaveis": {
+    "ouvidoria": "[PREENCHER: nome do responsável pela ouvidoria]",
+    "encarregado": "[PREENCHER: nome do encarregado pelo tratamento de dados]",
+    "privacidadeAtualizadoEm": "[PREENCHER: data da última revisão]"
+  },
+
+  "mensagens": {
+    "duvida": "Olá, gostaria de tirar uma dúvida.",
+    "pedido": "Olá, gostaria de consultar o andamento do meu pedido. Protocolo: ",
+    "certidao": "Olá, gostaria de solicitar uma certidão."
+  },
+
+  "links": {
+    "tjce": "https://www.tjce.jus.br/",
+    "seloDigital": "https://www.tjce.jus.br/",
+    "tabelaEmolumentos": "https://www.tjce.jus.br/",
+    "justicaAberta": "https://www.cnj.jus.br/corregedoria/justica_aberta/",
+    "eNotariado": "https://www.e-notariado.org.br/",
+    "registroImoveis": "https://www.registrodeimoveis.org.br/",
+    "mapaOnr": "https://mapa.onr.org.br/",
+    "cenprot": "https://www.protestodetitulos.org.br/",
+    "censec": "https://www.censec.org.br/",
+    "registroCivil": "https://www.registrocivil.org.br/",
+    "odsOnu": "https://brasil.un.org/pt-br/sdgs",
+    "jucec": "https://www.jucec.ce.gov.br/"
+  },
+
+  "_linksPendentes": "Troque seloDigital e tabelaEmolumentos pelos endereços diretos da consulta de selo e da tabela vigente do TJCE. Revisar a tabela todo mês de janeiro.",
+
+  "navegacao": [
+    { "arquivo": "index.html", "rotulo": "Início" },
+    { "arquivo": "o-cartorio.html", "rotulo": "O Cartório" },
+    { "arquivo": "servicos.html", "rotulo": "Serviços" },
+    { "arquivo": "certidoes.html", "rotulo": "Certidões" },
+    { "arquivo": "selo-digital.html", "rotulo": "Selo Digital" },
+    { "arquivo": "emolumentos.html", "rotulo": "Emolumentos" },
+    { "arquivo": "transparencia.html", "rotulo": "Transparência" },
+    { "arquivo": "agenda-2030.html", "rotulo": "Agenda 2030" },
+    { "arquivo": "duvidas.html", "rotulo": "Dúvidas" },
+    { "arquivo": "contato.html", "rotulo": "Contato" }
+  ]
+}
