@@ -4,6 +4,7 @@ import { carregarDados } from "./dados.js";
 import { montarLayout, ativarMenu } from "./layout.js";
 import { preencherVinculos } from "./vinculos.js";
 import { renderizarConteudo } from "./paginas.js";
+import { ativarTransicao } from "./transicao.js";
 import { consultar } from "./utilitarios.js";
 
 function atualizarTitulo(cartorio) {
@@ -38,6 +39,7 @@ async function iniciar() {
     renderizarConteudo(dados);
     preencherVinculos(dados.cartorio);
     ativarMenu();
+    ativarTransicao();
     atualizarTitulo(dados.cartorio);
 
     document.documentElement.classList.add("site-pronto");

@@ -69,6 +69,7 @@ js/layout.js                      Cabeçalho, rodapé e menu do celular
 js/componentes.js                 Acordeão, lista e aviso
 js/paginas.js                     Blocos de cada página (cartões, contato, FAQ, ODS...)
 js/vinculos.js                    Preenche contatos e links marcados no HTML
+js/transicao.js                   Fade curto ao trocar de página
 js/utilitarios.js                 Funções pequenas (escape de HTML, seletores)
 
 css/base.css                      Variáveis (cores, fontes, espaçamento), reset, tipografia

@@ -239,6 +239,30 @@ code {
 }
 
 /* --------------------------------------------------------------------------
+   Transição entre páginas — entrada leve e saída curta
+   -------------------------------------------------------------------------- */
+
+@keyframes pagina-entrar {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: pagina-entrar 260ms ease-out both;
+}
+
+html.pagina-saindo body {
+  animation: none;
+  opacity: 0;
+  transition: opacity 180ms ease-in;
+}
+
+/* --------------------------------------------------------------------------
    Preferência por menos movimento
    -------------------------------------------------------------------------- */
 
