@@ -30,7 +30,7 @@ Regras simples ao editar o JSON:
 ### O que ainda precisa ser preenchido
 
 - `responsaveis.ouvidoria`, `responsaveis.encarregado`, `responsaveis.privacidadeAtualizadoEm`
-- Em `conteudo.json`: `sobre.*` e as duas respostas de FAQ sobre agendamento e pagamento
+- Em `conteudo.json`: as duas respostas de FAQ sobre agendamento e pagamento
 - `links.seloDigital` e `links.tabelaEmolumentos` — trocar pelos endereços diretos do TJCE
   (revisar a tabela de emolumentos todo mês de janeiro)
 - `arquivos/` — enviar os PDFs citados em `conteudo.json → modelos`

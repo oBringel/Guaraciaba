@@ -2,10 +2,10 @@
   "_comoEditar": "Conteúdo das páginas internas que é repetido ou editado com frequência: aviso sobre registro civil, portais de certidões, perguntas frequentes, modelos para download e Agenda 2030. Os textos com HTML aceitam links e negrito.",
 
   "sobre": {
-    "apresentacao": "<p>[PREENCHER: histórico da serventia, tempo de atuação e abrangência do atendimento.]</p>",
-    "missao": "[PREENCHER: texto da missão]",
-    "visao": "[PREENCHER: texto da visão]",
-    "valores": "[PREENCHER: texto dos valores]"
+    "apresentacao": "<p>O 2º Ofício de Notas e Registro de Imóveis de Guaraciaba do Norte (Cartório Arquimedes Bucar) foi instalado em 12 de junho de 1931 e atua continuamente há mais de 90 anos. Sob a titularidade do Dr. Arquimedes Bucar Lages Carvalho, a serventia atende a comarca oferecendo soluções com transparência, segurança jurídica e modernização tecnológica na prestação dos serviços extrajudiciais.</p>",
+    "missao": "Garantir a segurança jurídica, a publicidade e a eficácia dos atos notariais e de registro, oferecendo um atendimento ágil, confiável e humanizado à sociedade de Guaraciaba do Norte.",
+    "visao": "Ser reconhecido como um modelo de excelência na gestão extrajudicial, inovando constantemente em tecnologia, processos e no aprimoramento profissional da equipe.",
+    "valores": "Legalidade, transparência, ética, eficiência, inovação tecnológica, cordialidade no atendimento e compromisso com o desenvolvimento da comunidade local."
   },
 
   "avisoRegistroCivil": {
