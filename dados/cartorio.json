@@ -4,9 +4,9 @@
   "identificacao": {
     "nomeCurto": "Cartório Arquimedes Bucar",
     "descritor": "2º Ofício de Guaraciaba do Norte · Serviços Notariais e Registrais",
-    "nomeOficial": "[PREENCHER: denominação oficial da serventia]",
-    "titular": "[PREENCHER: nome do tabelião / oficial titular]",
-    "cns": "[PREENCHER: CNS]",
+    "nomeOficial": "2º Ofício de Notas e Registro de Imóveis de Guaraciaba do Norte (Cartório Arquimedes Bucar)",
+    "titular": "Arquimedes Bucar Lages Carvalho",
+    "cns": "02.043-8",
     "comarca": "Guaraciaba do Norte",
     "uf": "CE"
   },
@@ -15,7 +15,7 @@
     "logradouro": "Rua Capitão Ferreira, 730",
     "cidade": "Guaraciaba do Norte",
     "uf": "CE",
-    "cep": "[PREENCHER: CEP]",
+    "cep": "62380-000",
     "consultaMapa": ""
   },
 

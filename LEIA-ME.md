@@ -29,8 +29,6 @@ Regras simples ao editar o JSON:
 
 ### O que ainda precisa ser preenchido
 
-- `identificacao.nomeOficial`, `identificacao.titular`, `identificacao.cns`
-- `endereco.cep`
 - `responsaveis.ouvidoria`, `responsaveis.encarregado`, `responsaveis.privacidadeAtualizadoEm`
 - Em `conteudo.json`: `sobre.*` e as duas respostas de FAQ sobre agendamento e pagamento
 - `links.seloDigital` e `links.tabelaEmolumentos` — trocar pelos endereços diretos do TJCE
