@@ -156,6 +156,44 @@
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 
+/* ODS: dois cartões por linha, com o título à esquerda e o texto à direita */
+
+.grade--ods {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48em) {
+  .grade--ods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cartao.cartao--ods {
+    display: grid;
+    grid-template-columns: minmax(8.5rem, 11rem) minmax(0, 1fr);
+    column-gap: var(--esp-5);
+    align-items: start;
+  }
+
+  .cartao.cartao--ods .cartao__numero {
+    margin-bottom: var(--esp-3);
+  }
+
+  .cartao.cartao--ods .cartao__titulo {
+    margin-bottom: 0;
+  }
+}
+
+/* O quinto objetivo ocupa a linha inteira para fechar a grade */
+@media (min-width: 64em) {
+  .grade--ods > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .grade--ods > :last-child:nth-child(odd) .cartao__titulo {
+    margin-bottom: var(--esp-2);
+  }
+}
+
 /* Cinco atribuições: 2 cartões largos na primeira linha, 3 na segunda */
 
 .grade--atribuicoes {
@@ -767,7 +805,7 @@
 
 /* Grade com exatamente cinco cartões: uma linha só no desktop */
 @media (min-width: 64em) {
-  .grade:not(.grade--atribuicoes):has(> :nth-child(5):last-child) {
+  .grade:not(.grade--atribuicoes):not(.grade--ods):has(> :nth-child(5):last-child) {
     grid-template-columns: repeat(5, 1fr);
   }
 }

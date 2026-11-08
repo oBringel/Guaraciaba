@@ -208,18 +208,22 @@ ${cartao("Valores", sobre.valores)}
 export function ods({ ods }) {
   const cartoes = ods
     .map(
-      (objetivo) => `          <article class="cartao">
-            <span class="cartao__numero" aria-hidden="true">${esc(objetivo.codigo)}</span>
-            <h3 class="cartao__titulo">${esc(objetivo.titulo)}</h3>
-            <p>${esc(objetivo.texto)}</p>
-            <ul>
-${objetivo.itens.map((item) => `              <li>${esc(item)}</li>`).join("\n")}
-            </ul>
+      (objetivo) => `          <article class="cartao cartao--ods">
+            <div class="cartao__frente">
+              <span class="cartao__numero" aria-hidden="true">${esc(objetivo.codigo)}</span>
+              <h3 class="cartao__titulo">${esc(objetivo.titulo)}</h3>
+            </div>
+            <div class="cartao__corpo">
+              <p>${esc(objetivo.texto)}</p>
+              <ul>
+${objetivo.itens.map((item) => `                <li>${esc(item)}</li>`).join("\n")}
+              </ul>
+            </div>
           </article>`
     )
     .join("\n");
 
-  return `        <div class="grade grade--larga">
+  return `        <div class="grade grade--ods">
 ${cartoes}
         </div>`;
 }
