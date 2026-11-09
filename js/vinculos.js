@@ -87,5 +87,7 @@ export function preencherVinculos(cartorio, raiz = document) {
 
   consultarTodos("[data-wa]", raiz).forEach((elemento) => {
     elemento.setAttribute("href", linkWhatsApp(cartorio, elemento.dataset.wa));
+    elemento.setAttribute("target", "_blank");
+    elemento.setAttribute("rel", "noopener");
   });
 }

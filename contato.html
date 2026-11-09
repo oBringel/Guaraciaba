@@ -25,6 +25,14 @@
     window.setTimeout(function () {
       document.documentElement.classList.add("site-pronto");
     }, 2000);
+    // Evita que um toque em "WhatsApp" dispare antes do link ser montado pelo JS.
+    document.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest && e.target.closest("[data-wa]");
+      if (!a) return;
+      var h = a.getAttribute("href") || "";
+      if (/^https?:\/\/wa\.me\//i.test(h)) return; // link pronto
+      if (h === "#" || h === "" || h.charAt(0) === "#") { e.preventDefault(); }
+    }, true);
   </script>
 </head>
 <body data-pagina="contato">
