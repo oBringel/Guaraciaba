@@ -3,9 +3,7 @@
 const PASTA_DADOS = new URL("../dados/", import.meta.url);
 
 async function lerArquivo(nome) {
-  const resposta = await fetch(new URL(`${nome}.json`, PASTA_DADOS), {
-    cache: "no-cache"
-  });
+  const resposta = await fetch(new URL(`${nome}.json`, PASTA_DADOS));
 
   if (!resposta.ok) {
     throw new Error(`Falha ao carregar dados/${nome}.json (HTTP ${resposta.status}).`);

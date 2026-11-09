@@ -2,6 +2,16 @@
    layout.css — container, cabeçalho, navegação, faixas e rodapé
    ========================================================================== */
 
+/* Espaço reservado para o cabeçalho/rodapé montados pelo JS, evitando salto
+   de layout enquanto o conteúdo principal já está visível. */
+#site-cabecalho {
+  min-height: 4.25rem;
+}
+
+#site-rodape {
+  min-height: 8rem;
+}
+
 /* --------------------------------------------------------------------------
    Container
    -------------------------------------------------------------------------- */
